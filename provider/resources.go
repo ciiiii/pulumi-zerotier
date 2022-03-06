@@ -77,7 +77,7 @@ func Provider() tfbridge.ProviderInfo {
 		Keywords:   []string{"pulumi", "zerotier", "category/cloud"},
 		License:    "Apache-2.0",
 		Homepage:   "https://www.pulumi.com",
-		Repository: "https://github.com/pulumi/pulumi-zerotier",
+		Repository: "https://github.com/yckao/pulumi-zerotier",
 		// The GitHub Org for the provider - defaults to `terraform-providers`
 		GitHubOrg: "",
 		Config:    map[string]*tfbridge.SchemaInfo{

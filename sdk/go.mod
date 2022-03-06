@@ -1,4 +1,4 @@
-module github.com/pulumi/pulumi-zerotier/sdk
+module github.com/yckao/pulumi-zerotier/sdk
 
 go 1.16
 
