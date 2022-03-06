@@ -1,7 +1,7 @@
 PROJECT_NAME := zerotier Package
 
 PACK             := zerotier
-ORG              := pulumi
+ORG              := yckao
 PROJECT          := github.com/${ORG}/pulumi-${PACK}
 NODE_MODULE_NAME := @pulumi/${PACK}
 TF_NAME          := ${PACK}
