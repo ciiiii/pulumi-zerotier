@@ -13,10 +13,10 @@ __all__ = [
     'NetworkAssignIpv6Args',
     'NetworkAssignmentPoolArgs',
     'NetworkRouteArgs',
-    'GerNetworkAssignIpv4Args',
-    'GerNetworkAssignIpv6Args',
-    'GerNetworkAssignmentPoolArgs',
-    'GerNetworkRouteArgs',
+    'GetNetworkAssignIpv4Args',
+    'GetNetworkAssignIpv6Args',
+    'GetNetworkAssignmentPoolArgs',
+    'GetNetworkRouteArgs',
 ]
 
 @pulumi.input_type
@@ -155,7 +155,7 @@ class NetworkRouteArgs:
 
 
 @pulumi.input_type
-class GerNetworkAssignIpv4Args:
+class GetNetworkAssignIpv4Args:
     def __init__(__self__, *,
                  zerotier: Optional[bool] = None):
         if zerotier is not None:
@@ -172,7 +172,7 @@ class GerNetworkAssignIpv4Args:
 
 
 @pulumi.input_type
-class GerNetworkAssignIpv6Args:
+class GetNetworkAssignIpv6Args:
     def __init__(__self__, *,
                  rfc4193: Optional[bool] = None,
                  sixplane: Optional[bool] = None,
@@ -213,7 +213,7 @@ class GerNetworkAssignIpv6Args:
 
 
 @pulumi.input_type
-class GerNetworkAssignmentPoolArgs:
+class GetNetworkAssignmentPoolArgs:
     def __init__(__self__, *,
                  end: Optional[str] = None,
                  start: Optional[str] = None):
@@ -242,7 +242,7 @@ class GerNetworkAssignmentPoolArgs:
 
 
 @pulumi.input_type
-class GerNetworkRouteArgs:
+class GetNetworkRouteArgs:
     def __init__(__self__, *,
                  target: str,
                  via: Optional[str] = None):

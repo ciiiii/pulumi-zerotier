@@ -7,16 +7,18 @@ using System.Collections.Immutable;
 using System.Threading.Tasks;
 using Pulumi.Serialization;
 
-namespace Pulumi.Zerotier.Inputs
+namespace Pulumi.Zerotier.Outputs
 {
 
-    public sealed class GerNetworkAssignIpv4InputArgs : Pulumi.ResourceArgs
+    [OutputType]
+    public sealed class GetNetworkAssignIpv4Result
     {
-        [Input("zerotier")]
-        public Input<bool>? Zerotier { get; set; }
+        public readonly bool? Zerotier;
 
-        public GerNetworkAssignIpv4InputArgs()
+        [OutputConstructor]
+        private GetNetworkAssignIpv4Result(bool? zerotier)
         {
+            Zerotier = zerotier;
         }
     }
 }

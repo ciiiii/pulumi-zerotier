@@ -5,7 +5,7 @@
 from . import _utilities
 import typing
 # Export this package's modules as members:
-from .ger_network import *
+from .get_network import *
 from .identity import *
 from .member import *
 from .network import *

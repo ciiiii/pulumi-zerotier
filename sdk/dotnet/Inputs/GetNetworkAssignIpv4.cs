@@ -10,15 +10,12 @@ using Pulumi.Serialization;
 namespace Pulumi.Zerotier.Inputs
 {
 
-    public sealed class GerNetworkRouteInputArgs : Pulumi.ResourceArgs
+    public sealed class GetNetworkAssignIpv4Args : Pulumi.InvokeArgs
     {
-        [Input("target", required: true)]
-        public Input<string> Target { get; set; } = null!;
+        [Input("zerotier")]
+        public bool? Zerotier { get; set; }
 
-        [Input("via")]
-        public Input<string>? Via { get; set; }
-
-        public GerNetworkRouteInputArgs()
+        public GetNetworkAssignIpv4Args()
         {
         }
     }

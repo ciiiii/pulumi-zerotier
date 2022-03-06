@@ -13,10 +13,10 @@ __all__ = [
     'NetworkAssignIpv6',
     'NetworkAssignmentPool',
     'NetworkRoute',
-    'GerNetworkAssignIpv4Result',
-    'GerNetworkAssignIpv6Result',
-    'GerNetworkAssignmentPoolResult',
-    'GerNetworkRouteResult',
+    'GetNetworkAssignIpv4Result',
+    'GetNetworkAssignIpv6Result',
+    'GetNetworkAssignmentPoolResult',
+    'GetNetworkRouteResult',
 ]
 
 @pulumi.output_type
@@ -123,7 +123,7 @@ class NetworkRoute(dict):
 
 
 @pulumi.output_type
-class GerNetworkAssignIpv4Result(dict):
+class GetNetworkAssignIpv4Result(dict):
     def __init__(__self__, *,
                  zerotier: Optional[bool] = None):
         if zerotier is not None:
@@ -136,7 +136,7 @@ class GerNetworkAssignIpv4Result(dict):
 
 
 @pulumi.output_type
-class GerNetworkAssignIpv6Result(dict):
+class GetNetworkAssignIpv6Result(dict):
     def __init__(__self__, *,
                  rfc4193: Optional[bool] = None,
                  sixplane: Optional[bool] = None,
@@ -165,7 +165,7 @@ class GerNetworkAssignIpv6Result(dict):
 
 
 @pulumi.output_type
-class GerNetworkAssignmentPoolResult(dict):
+class GetNetworkAssignmentPoolResult(dict):
     def __init__(__self__, *,
                  end: Optional[str] = None,
                  start: Optional[str] = None):
@@ -186,7 +186,7 @@ class GerNetworkAssignmentPoolResult(dict):
 
 
 @pulumi.output_type
-class GerNetworkRouteResult(dict):
+class GetNetworkRouteResult(dict):
     def __init__(__self__, *,
                  target: str,
                  via: Optional[str] = None):

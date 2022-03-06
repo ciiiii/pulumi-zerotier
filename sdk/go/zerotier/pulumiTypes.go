@@ -422,404 +422,404 @@ func (o NetworkRouteArrayOutput) Index(i pulumi.IntInput) NetworkRouteOutput {
 	}).(NetworkRouteOutput)
 }
 
-type GerNetworkAssignIpv4 struct {
+type GetNetworkAssignIpv4 struct {
 	Zerotier *bool `pulumi:"zerotier"`
 }
 
-// GerNetworkAssignIpv4Input is an input type that accepts GerNetworkAssignIpv4Args and GerNetworkAssignIpv4Output values.
-// You can construct a concrete instance of `GerNetworkAssignIpv4Input` via:
+// GetNetworkAssignIpv4Input is an input type that accepts GetNetworkAssignIpv4Args and GetNetworkAssignIpv4Output values.
+// You can construct a concrete instance of `GetNetworkAssignIpv4Input` via:
 //
-//          GerNetworkAssignIpv4Args{...}
-type GerNetworkAssignIpv4Input interface {
+//          GetNetworkAssignIpv4Args{...}
+type GetNetworkAssignIpv4Input interface {
 	pulumi.Input
 
-	ToGerNetworkAssignIpv4Output() GerNetworkAssignIpv4Output
-	ToGerNetworkAssignIpv4OutputWithContext(context.Context) GerNetworkAssignIpv4Output
+	ToGetNetworkAssignIpv4Output() GetNetworkAssignIpv4Output
+	ToGetNetworkAssignIpv4OutputWithContext(context.Context) GetNetworkAssignIpv4Output
 }
 
-type GerNetworkAssignIpv4Args struct {
+type GetNetworkAssignIpv4Args struct {
 	Zerotier pulumi.BoolPtrInput `pulumi:"zerotier"`
 }
 
-func (GerNetworkAssignIpv4Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GerNetworkAssignIpv4)(nil)).Elem()
+func (GetNetworkAssignIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkAssignIpv4)(nil)).Elem()
 }
 
-func (i GerNetworkAssignIpv4Args) ToGerNetworkAssignIpv4Output() GerNetworkAssignIpv4Output {
-	return i.ToGerNetworkAssignIpv4OutputWithContext(context.Background())
+func (i GetNetworkAssignIpv4Args) ToGetNetworkAssignIpv4Output() GetNetworkAssignIpv4Output {
+	return i.ToGetNetworkAssignIpv4OutputWithContext(context.Background())
 }
 
-func (i GerNetworkAssignIpv4Args) ToGerNetworkAssignIpv4OutputWithContext(ctx context.Context) GerNetworkAssignIpv4Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GerNetworkAssignIpv4Output)
+func (i GetNetworkAssignIpv4Args) ToGetNetworkAssignIpv4OutputWithContext(ctx context.Context) GetNetworkAssignIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkAssignIpv4Output)
 }
 
-// GerNetworkAssignIpv4ArrayInput is an input type that accepts GerNetworkAssignIpv4Array and GerNetworkAssignIpv4ArrayOutput values.
-// You can construct a concrete instance of `GerNetworkAssignIpv4ArrayInput` via:
+// GetNetworkAssignIpv4ArrayInput is an input type that accepts GetNetworkAssignIpv4Array and GetNetworkAssignIpv4ArrayOutput values.
+// You can construct a concrete instance of `GetNetworkAssignIpv4ArrayInput` via:
 //
-//          GerNetworkAssignIpv4Array{ GerNetworkAssignIpv4Args{...} }
-type GerNetworkAssignIpv4ArrayInput interface {
+//          GetNetworkAssignIpv4Array{ GetNetworkAssignIpv4Args{...} }
+type GetNetworkAssignIpv4ArrayInput interface {
 	pulumi.Input
 
-	ToGerNetworkAssignIpv4ArrayOutput() GerNetworkAssignIpv4ArrayOutput
-	ToGerNetworkAssignIpv4ArrayOutputWithContext(context.Context) GerNetworkAssignIpv4ArrayOutput
+	ToGetNetworkAssignIpv4ArrayOutput() GetNetworkAssignIpv4ArrayOutput
+	ToGetNetworkAssignIpv4ArrayOutputWithContext(context.Context) GetNetworkAssignIpv4ArrayOutput
 }
 
-type GerNetworkAssignIpv4Array []GerNetworkAssignIpv4Input
+type GetNetworkAssignIpv4Array []GetNetworkAssignIpv4Input
 
-func (GerNetworkAssignIpv4Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GerNetworkAssignIpv4)(nil)).Elem()
+func (GetNetworkAssignIpv4Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkAssignIpv4)(nil)).Elem()
 }
 
-func (i GerNetworkAssignIpv4Array) ToGerNetworkAssignIpv4ArrayOutput() GerNetworkAssignIpv4ArrayOutput {
-	return i.ToGerNetworkAssignIpv4ArrayOutputWithContext(context.Background())
+func (i GetNetworkAssignIpv4Array) ToGetNetworkAssignIpv4ArrayOutput() GetNetworkAssignIpv4ArrayOutput {
+	return i.ToGetNetworkAssignIpv4ArrayOutputWithContext(context.Background())
 }
 
-func (i GerNetworkAssignIpv4Array) ToGerNetworkAssignIpv4ArrayOutputWithContext(ctx context.Context) GerNetworkAssignIpv4ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GerNetworkAssignIpv4ArrayOutput)
+func (i GetNetworkAssignIpv4Array) ToGetNetworkAssignIpv4ArrayOutputWithContext(ctx context.Context) GetNetworkAssignIpv4ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkAssignIpv4ArrayOutput)
 }
 
-type GerNetworkAssignIpv4Output struct{ *pulumi.OutputState }
+type GetNetworkAssignIpv4Output struct{ *pulumi.OutputState }
 
-func (GerNetworkAssignIpv4Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GerNetworkAssignIpv4)(nil)).Elem()
+func (GetNetworkAssignIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkAssignIpv4)(nil)).Elem()
 }
 
-func (o GerNetworkAssignIpv4Output) ToGerNetworkAssignIpv4Output() GerNetworkAssignIpv4Output {
+func (o GetNetworkAssignIpv4Output) ToGetNetworkAssignIpv4Output() GetNetworkAssignIpv4Output {
 	return o
 }
 
-func (o GerNetworkAssignIpv4Output) ToGerNetworkAssignIpv4OutputWithContext(ctx context.Context) GerNetworkAssignIpv4Output {
+func (o GetNetworkAssignIpv4Output) ToGetNetworkAssignIpv4OutputWithContext(ctx context.Context) GetNetworkAssignIpv4Output {
 	return o
 }
 
-func (o GerNetworkAssignIpv4Output) Zerotier() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v GerNetworkAssignIpv4) *bool { return v.Zerotier }).(pulumi.BoolPtrOutput)
+func (o GetNetworkAssignIpv4Output) Zerotier() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNetworkAssignIpv4) *bool { return v.Zerotier }).(pulumi.BoolPtrOutput)
 }
 
-type GerNetworkAssignIpv4ArrayOutput struct{ *pulumi.OutputState }
+type GetNetworkAssignIpv4ArrayOutput struct{ *pulumi.OutputState }
 
-func (GerNetworkAssignIpv4ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GerNetworkAssignIpv4)(nil)).Elem()
+func (GetNetworkAssignIpv4ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkAssignIpv4)(nil)).Elem()
 }
 
-func (o GerNetworkAssignIpv4ArrayOutput) ToGerNetworkAssignIpv4ArrayOutput() GerNetworkAssignIpv4ArrayOutput {
+func (o GetNetworkAssignIpv4ArrayOutput) ToGetNetworkAssignIpv4ArrayOutput() GetNetworkAssignIpv4ArrayOutput {
 	return o
 }
 
-func (o GerNetworkAssignIpv4ArrayOutput) ToGerNetworkAssignIpv4ArrayOutputWithContext(ctx context.Context) GerNetworkAssignIpv4ArrayOutput {
+func (o GetNetworkAssignIpv4ArrayOutput) ToGetNetworkAssignIpv4ArrayOutputWithContext(ctx context.Context) GetNetworkAssignIpv4ArrayOutput {
 	return o
 }
 
-func (o GerNetworkAssignIpv4ArrayOutput) Index(i pulumi.IntInput) GerNetworkAssignIpv4Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GerNetworkAssignIpv4 {
-		return vs[0].([]GerNetworkAssignIpv4)[vs[1].(int)]
-	}).(GerNetworkAssignIpv4Output)
+func (o GetNetworkAssignIpv4ArrayOutput) Index(i pulumi.IntInput) GetNetworkAssignIpv4Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkAssignIpv4 {
+		return vs[0].([]GetNetworkAssignIpv4)[vs[1].(int)]
+	}).(GetNetworkAssignIpv4Output)
 }
 
-type GerNetworkAssignIpv6 struct {
+type GetNetworkAssignIpv6 struct {
 	Rfc4193  *bool `pulumi:"rfc4193"`
 	Sixplane *bool `pulumi:"sixplane"`
 	Zerotier *bool `pulumi:"zerotier"`
 }
 
-// GerNetworkAssignIpv6Input is an input type that accepts GerNetworkAssignIpv6Args and GerNetworkAssignIpv6Output values.
-// You can construct a concrete instance of `GerNetworkAssignIpv6Input` via:
+// GetNetworkAssignIpv6Input is an input type that accepts GetNetworkAssignIpv6Args and GetNetworkAssignIpv6Output values.
+// You can construct a concrete instance of `GetNetworkAssignIpv6Input` via:
 //
-//          GerNetworkAssignIpv6Args{...}
-type GerNetworkAssignIpv6Input interface {
+//          GetNetworkAssignIpv6Args{...}
+type GetNetworkAssignIpv6Input interface {
 	pulumi.Input
 
-	ToGerNetworkAssignIpv6Output() GerNetworkAssignIpv6Output
-	ToGerNetworkAssignIpv6OutputWithContext(context.Context) GerNetworkAssignIpv6Output
+	ToGetNetworkAssignIpv6Output() GetNetworkAssignIpv6Output
+	ToGetNetworkAssignIpv6OutputWithContext(context.Context) GetNetworkAssignIpv6Output
 }
 
-type GerNetworkAssignIpv6Args struct {
+type GetNetworkAssignIpv6Args struct {
 	Rfc4193  pulumi.BoolPtrInput `pulumi:"rfc4193"`
 	Sixplane pulumi.BoolPtrInput `pulumi:"sixplane"`
 	Zerotier pulumi.BoolPtrInput `pulumi:"zerotier"`
 }
 
-func (GerNetworkAssignIpv6Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GerNetworkAssignIpv6)(nil)).Elem()
+func (GetNetworkAssignIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkAssignIpv6)(nil)).Elem()
 }
 
-func (i GerNetworkAssignIpv6Args) ToGerNetworkAssignIpv6Output() GerNetworkAssignIpv6Output {
-	return i.ToGerNetworkAssignIpv6OutputWithContext(context.Background())
+func (i GetNetworkAssignIpv6Args) ToGetNetworkAssignIpv6Output() GetNetworkAssignIpv6Output {
+	return i.ToGetNetworkAssignIpv6OutputWithContext(context.Background())
 }
 
-func (i GerNetworkAssignIpv6Args) ToGerNetworkAssignIpv6OutputWithContext(ctx context.Context) GerNetworkAssignIpv6Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GerNetworkAssignIpv6Output)
+func (i GetNetworkAssignIpv6Args) ToGetNetworkAssignIpv6OutputWithContext(ctx context.Context) GetNetworkAssignIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkAssignIpv6Output)
 }
 
-// GerNetworkAssignIpv6ArrayInput is an input type that accepts GerNetworkAssignIpv6Array and GerNetworkAssignIpv6ArrayOutput values.
-// You can construct a concrete instance of `GerNetworkAssignIpv6ArrayInput` via:
+// GetNetworkAssignIpv6ArrayInput is an input type that accepts GetNetworkAssignIpv6Array and GetNetworkAssignIpv6ArrayOutput values.
+// You can construct a concrete instance of `GetNetworkAssignIpv6ArrayInput` via:
 //
-//          GerNetworkAssignIpv6Array{ GerNetworkAssignIpv6Args{...} }
-type GerNetworkAssignIpv6ArrayInput interface {
+//          GetNetworkAssignIpv6Array{ GetNetworkAssignIpv6Args{...} }
+type GetNetworkAssignIpv6ArrayInput interface {
 	pulumi.Input
 
-	ToGerNetworkAssignIpv6ArrayOutput() GerNetworkAssignIpv6ArrayOutput
-	ToGerNetworkAssignIpv6ArrayOutputWithContext(context.Context) GerNetworkAssignIpv6ArrayOutput
+	ToGetNetworkAssignIpv6ArrayOutput() GetNetworkAssignIpv6ArrayOutput
+	ToGetNetworkAssignIpv6ArrayOutputWithContext(context.Context) GetNetworkAssignIpv6ArrayOutput
 }
 
-type GerNetworkAssignIpv6Array []GerNetworkAssignIpv6Input
+type GetNetworkAssignIpv6Array []GetNetworkAssignIpv6Input
 
-func (GerNetworkAssignIpv6Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GerNetworkAssignIpv6)(nil)).Elem()
+func (GetNetworkAssignIpv6Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkAssignIpv6)(nil)).Elem()
 }
 
-func (i GerNetworkAssignIpv6Array) ToGerNetworkAssignIpv6ArrayOutput() GerNetworkAssignIpv6ArrayOutput {
-	return i.ToGerNetworkAssignIpv6ArrayOutputWithContext(context.Background())
+func (i GetNetworkAssignIpv6Array) ToGetNetworkAssignIpv6ArrayOutput() GetNetworkAssignIpv6ArrayOutput {
+	return i.ToGetNetworkAssignIpv6ArrayOutputWithContext(context.Background())
 }
 
-func (i GerNetworkAssignIpv6Array) ToGerNetworkAssignIpv6ArrayOutputWithContext(ctx context.Context) GerNetworkAssignIpv6ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GerNetworkAssignIpv6ArrayOutput)
+func (i GetNetworkAssignIpv6Array) ToGetNetworkAssignIpv6ArrayOutputWithContext(ctx context.Context) GetNetworkAssignIpv6ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkAssignIpv6ArrayOutput)
 }
 
-type GerNetworkAssignIpv6Output struct{ *pulumi.OutputState }
+type GetNetworkAssignIpv6Output struct{ *pulumi.OutputState }
 
-func (GerNetworkAssignIpv6Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GerNetworkAssignIpv6)(nil)).Elem()
+func (GetNetworkAssignIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkAssignIpv6)(nil)).Elem()
 }
 
-func (o GerNetworkAssignIpv6Output) ToGerNetworkAssignIpv6Output() GerNetworkAssignIpv6Output {
+func (o GetNetworkAssignIpv6Output) ToGetNetworkAssignIpv6Output() GetNetworkAssignIpv6Output {
 	return o
 }
 
-func (o GerNetworkAssignIpv6Output) ToGerNetworkAssignIpv6OutputWithContext(ctx context.Context) GerNetworkAssignIpv6Output {
+func (o GetNetworkAssignIpv6Output) ToGetNetworkAssignIpv6OutputWithContext(ctx context.Context) GetNetworkAssignIpv6Output {
 	return o
 }
 
-func (o GerNetworkAssignIpv6Output) Rfc4193() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v GerNetworkAssignIpv6) *bool { return v.Rfc4193 }).(pulumi.BoolPtrOutput)
+func (o GetNetworkAssignIpv6Output) Rfc4193() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNetworkAssignIpv6) *bool { return v.Rfc4193 }).(pulumi.BoolPtrOutput)
 }
 
-func (o GerNetworkAssignIpv6Output) Sixplane() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v GerNetworkAssignIpv6) *bool { return v.Sixplane }).(pulumi.BoolPtrOutput)
+func (o GetNetworkAssignIpv6Output) Sixplane() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNetworkAssignIpv6) *bool { return v.Sixplane }).(pulumi.BoolPtrOutput)
 }
 
-func (o GerNetworkAssignIpv6Output) Zerotier() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v GerNetworkAssignIpv6) *bool { return v.Zerotier }).(pulumi.BoolPtrOutput)
+func (o GetNetworkAssignIpv6Output) Zerotier() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNetworkAssignIpv6) *bool { return v.Zerotier }).(pulumi.BoolPtrOutput)
 }
 
-type GerNetworkAssignIpv6ArrayOutput struct{ *pulumi.OutputState }
+type GetNetworkAssignIpv6ArrayOutput struct{ *pulumi.OutputState }
 
-func (GerNetworkAssignIpv6ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GerNetworkAssignIpv6)(nil)).Elem()
+func (GetNetworkAssignIpv6ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkAssignIpv6)(nil)).Elem()
 }
 
-func (o GerNetworkAssignIpv6ArrayOutput) ToGerNetworkAssignIpv6ArrayOutput() GerNetworkAssignIpv6ArrayOutput {
+func (o GetNetworkAssignIpv6ArrayOutput) ToGetNetworkAssignIpv6ArrayOutput() GetNetworkAssignIpv6ArrayOutput {
 	return o
 }
 
-func (o GerNetworkAssignIpv6ArrayOutput) ToGerNetworkAssignIpv6ArrayOutputWithContext(ctx context.Context) GerNetworkAssignIpv6ArrayOutput {
+func (o GetNetworkAssignIpv6ArrayOutput) ToGetNetworkAssignIpv6ArrayOutputWithContext(ctx context.Context) GetNetworkAssignIpv6ArrayOutput {
 	return o
 }
 
-func (o GerNetworkAssignIpv6ArrayOutput) Index(i pulumi.IntInput) GerNetworkAssignIpv6Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GerNetworkAssignIpv6 {
-		return vs[0].([]GerNetworkAssignIpv6)[vs[1].(int)]
-	}).(GerNetworkAssignIpv6Output)
+func (o GetNetworkAssignIpv6ArrayOutput) Index(i pulumi.IntInput) GetNetworkAssignIpv6Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkAssignIpv6 {
+		return vs[0].([]GetNetworkAssignIpv6)[vs[1].(int)]
+	}).(GetNetworkAssignIpv6Output)
 }
 
-type GerNetworkAssignmentPool struct {
+type GetNetworkAssignmentPool struct {
 	End   *string `pulumi:"end"`
 	Start *string `pulumi:"start"`
 }
 
-// GerNetworkAssignmentPoolInput is an input type that accepts GerNetworkAssignmentPoolArgs and GerNetworkAssignmentPoolOutput values.
-// You can construct a concrete instance of `GerNetworkAssignmentPoolInput` via:
+// GetNetworkAssignmentPoolInput is an input type that accepts GetNetworkAssignmentPoolArgs and GetNetworkAssignmentPoolOutput values.
+// You can construct a concrete instance of `GetNetworkAssignmentPoolInput` via:
 //
-//          GerNetworkAssignmentPoolArgs{...}
-type GerNetworkAssignmentPoolInput interface {
+//          GetNetworkAssignmentPoolArgs{...}
+type GetNetworkAssignmentPoolInput interface {
 	pulumi.Input
 
-	ToGerNetworkAssignmentPoolOutput() GerNetworkAssignmentPoolOutput
-	ToGerNetworkAssignmentPoolOutputWithContext(context.Context) GerNetworkAssignmentPoolOutput
+	ToGetNetworkAssignmentPoolOutput() GetNetworkAssignmentPoolOutput
+	ToGetNetworkAssignmentPoolOutputWithContext(context.Context) GetNetworkAssignmentPoolOutput
 }
 
-type GerNetworkAssignmentPoolArgs struct {
+type GetNetworkAssignmentPoolArgs struct {
 	End   pulumi.StringPtrInput `pulumi:"end"`
 	Start pulumi.StringPtrInput `pulumi:"start"`
 }
 
-func (GerNetworkAssignmentPoolArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GerNetworkAssignmentPool)(nil)).Elem()
+func (GetNetworkAssignmentPoolArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkAssignmentPool)(nil)).Elem()
 }
 
-func (i GerNetworkAssignmentPoolArgs) ToGerNetworkAssignmentPoolOutput() GerNetworkAssignmentPoolOutput {
-	return i.ToGerNetworkAssignmentPoolOutputWithContext(context.Background())
+func (i GetNetworkAssignmentPoolArgs) ToGetNetworkAssignmentPoolOutput() GetNetworkAssignmentPoolOutput {
+	return i.ToGetNetworkAssignmentPoolOutputWithContext(context.Background())
 }
 
-func (i GerNetworkAssignmentPoolArgs) ToGerNetworkAssignmentPoolOutputWithContext(ctx context.Context) GerNetworkAssignmentPoolOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GerNetworkAssignmentPoolOutput)
+func (i GetNetworkAssignmentPoolArgs) ToGetNetworkAssignmentPoolOutputWithContext(ctx context.Context) GetNetworkAssignmentPoolOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkAssignmentPoolOutput)
 }
 
-// GerNetworkAssignmentPoolArrayInput is an input type that accepts GerNetworkAssignmentPoolArray and GerNetworkAssignmentPoolArrayOutput values.
-// You can construct a concrete instance of `GerNetworkAssignmentPoolArrayInput` via:
+// GetNetworkAssignmentPoolArrayInput is an input type that accepts GetNetworkAssignmentPoolArray and GetNetworkAssignmentPoolArrayOutput values.
+// You can construct a concrete instance of `GetNetworkAssignmentPoolArrayInput` via:
 //
-//          GerNetworkAssignmentPoolArray{ GerNetworkAssignmentPoolArgs{...} }
-type GerNetworkAssignmentPoolArrayInput interface {
+//          GetNetworkAssignmentPoolArray{ GetNetworkAssignmentPoolArgs{...} }
+type GetNetworkAssignmentPoolArrayInput interface {
 	pulumi.Input
 
-	ToGerNetworkAssignmentPoolArrayOutput() GerNetworkAssignmentPoolArrayOutput
-	ToGerNetworkAssignmentPoolArrayOutputWithContext(context.Context) GerNetworkAssignmentPoolArrayOutput
+	ToGetNetworkAssignmentPoolArrayOutput() GetNetworkAssignmentPoolArrayOutput
+	ToGetNetworkAssignmentPoolArrayOutputWithContext(context.Context) GetNetworkAssignmentPoolArrayOutput
 }
 
-type GerNetworkAssignmentPoolArray []GerNetworkAssignmentPoolInput
+type GetNetworkAssignmentPoolArray []GetNetworkAssignmentPoolInput
 
-func (GerNetworkAssignmentPoolArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GerNetworkAssignmentPool)(nil)).Elem()
+func (GetNetworkAssignmentPoolArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkAssignmentPool)(nil)).Elem()
 }
 
-func (i GerNetworkAssignmentPoolArray) ToGerNetworkAssignmentPoolArrayOutput() GerNetworkAssignmentPoolArrayOutput {
-	return i.ToGerNetworkAssignmentPoolArrayOutputWithContext(context.Background())
+func (i GetNetworkAssignmentPoolArray) ToGetNetworkAssignmentPoolArrayOutput() GetNetworkAssignmentPoolArrayOutput {
+	return i.ToGetNetworkAssignmentPoolArrayOutputWithContext(context.Background())
 }
 
-func (i GerNetworkAssignmentPoolArray) ToGerNetworkAssignmentPoolArrayOutputWithContext(ctx context.Context) GerNetworkAssignmentPoolArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GerNetworkAssignmentPoolArrayOutput)
+func (i GetNetworkAssignmentPoolArray) ToGetNetworkAssignmentPoolArrayOutputWithContext(ctx context.Context) GetNetworkAssignmentPoolArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkAssignmentPoolArrayOutput)
 }
 
-type GerNetworkAssignmentPoolOutput struct{ *pulumi.OutputState }
+type GetNetworkAssignmentPoolOutput struct{ *pulumi.OutputState }
 
-func (GerNetworkAssignmentPoolOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GerNetworkAssignmentPool)(nil)).Elem()
+func (GetNetworkAssignmentPoolOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkAssignmentPool)(nil)).Elem()
 }
 
-func (o GerNetworkAssignmentPoolOutput) ToGerNetworkAssignmentPoolOutput() GerNetworkAssignmentPoolOutput {
+func (o GetNetworkAssignmentPoolOutput) ToGetNetworkAssignmentPoolOutput() GetNetworkAssignmentPoolOutput {
 	return o
 }
 
-func (o GerNetworkAssignmentPoolOutput) ToGerNetworkAssignmentPoolOutputWithContext(ctx context.Context) GerNetworkAssignmentPoolOutput {
+func (o GetNetworkAssignmentPoolOutput) ToGetNetworkAssignmentPoolOutputWithContext(ctx context.Context) GetNetworkAssignmentPoolOutput {
 	return o
 }
 
-func (o GerNetworkAssignmentPoolOutput) End() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GerNetworkAssignmentPool) *string { return v.End }).(pulumi.StringPtrOutput)
+func (o GetNetworkAssignmentPoolOutput) End() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkAssignmentPool) *string { return v.End }).(pulumi.StringPtrOutput)
 }
 
-func (o GerNetworkAssignmentPoolOutput) Start() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GerNetworkAssignmentPool) *string { return v.Start }).(pulumi.StringPtrOutput)
+func (o GetNetworkAssignmentPoolOutput) Start() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkAssignmentPool) *string { return v.Start }).(pulumi.StringPtrOutput)
 }
 
-type GerNetworkAssignmentPoolArrayOutput struct{ *pulumi.OutputState }
+type GetNetworkAssignmentPoolArrayOutput struct{ *pulumi.OutputState }
 
-func (GerNetworkAssignmentPoolArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GerNetworkAssignmentPool)(nil)).Elem()
+func (GetNetworkAssignmentPoolArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkAssignmentPool)(nil)).Elem()
 }
 
-func (o GerNetworkAssignmentPoolArrayOutput) ToGerNetworkAssignmentPoolArrayOutput() GerNetworkAssignmentPoolArrayOutput {
+func (o GetNetworkAssignmentPoolArrayOutput) ToGetNetworkAssignmentPoolArrayOutput() GetNetworkAssignmentPoolArrayOutput {
 	return o
 }
 
-func (o GerNetworkAssignmentPoolArrayOutput) ToGerNetworkAssignmentPoolArrayOutputWithContext(ctx context.Context) GerNetworkAssignmentPoolArrayOutput {
+func (o GetNetworkAssignmentPoolArrayOutput) ToGetNetworkAssignmentPoolArrayOutputWithContext(ctx context.Context) GetNetworkAssignmentPoolArrayOutput {
 	return o
 }
 
-func (o GerNetworkAssignmentPoolArrayOutput) Index(i pulumi.IntInput) GerNetworkAssignmentPoolOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GerNetworkAssignmentPool {
-		return vs[0].([]GerNetworkAssignmentPool)[vs[1].(int)]
-	}).(GerNetworkAssignmentPoolOutput)
+func (o GetNetworkAssignmentPoolArrayOutput) Index(i pulumi.IntInput) GetNetworkAssignmentPoolOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkAssignmentPool {
+		return vs[0].([]GetNetworkAssignmentPool)[vs[1].(int)]
+	}).(GetNetworkAssignmentPoolOutput)
 }
 
-type GerNetworkRoute struct {
+type GetNetworkRoute struct {
 	Target string  `pulumi:"target"`
 	Via    *string `pulumi:"via"`
 }
 
-// GerNetworkRouteInput is an input type that accepts GerNetworkRouteArgs and GerNetworkRouteOutput values.
-// You can construct a concrete instance of `GerNetworkRouteInput` via:
+// GetNetworkRouteInput is an input type that accepts GetNetworkRouteArgs and GetNetworkRouteOutput values.
+// You can construct a concrete instance of `GetNetworkRouteInput` via:
 //
-//          GerNetworkRouteArgs{...}
-type GerNetworkRouteInput interface {
+//          GetNetworkRouteArgs{...}
+type GetNetworkRouteInput interface {
 	pulumi.Input
 
-	ToGerNetworkRouteOutput() GerNetworkRouteOutput
-	ToGerNetworkRouteOutputWithContext(context.Context) GerNetworkRouteOutput
+	ToGetNetworkRouteOutput() GetNetworkRouteOutput
+	ToGetNetworkRouteOutputWithContext(context.Context) GetNetworkRouteOutput
 }
 
-type GerNetworkRouteArgs struct {
+type GetNetworkRouteArgs struct {
 	Target pulumi.StringInput    `pulumi:"target"`
 	Via    pulumi.StringPtrInput `pulumi:"via"`
 }
 
-func (GerNetworkRouteArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GerNetworkRoute)(nil)).Elem()
+func (GetNetworkRouteArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkRoute)(nil)).Elem()
 }
 
-func (i GerNetworkRouteArgs) ToGerNetworkRouteOutput() GerNetworkRouteOutput {
-	return i.ToGerNetworkRouteOutputWithContext(context.Background())
+func (i GetNetworkRouteArgs) ToGetNetworkRouteOutput() GetNetworkRouteOutput {
+	return i.ToGetNetworkRouteOutputWithContext(context.Background())
 }
 
-func (i GerNetworkRouteArgs) ToGerNetworkRouteOutputWithContext(ctx context.Context) GerNetworkRouteOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GerNetworkRouteOutput)
+func (i GetNetworkRouteArgs) ToGetNetworkRouteOutputWithContext(ctx context.Context) GetNetworkRouteOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkRouteOutput)
 }
 
-// GerNetworkRouteArrayInput is an input type that accepts GerNetworkRouteArray and GerNetworkRouteArrayOutput values.
-// You can construct a concrete instance of `GerNetworkRouteArrayInput` via:
+// GetNetworkRouteArrayInput is an input type that accepts GetNetworkRouteArray and GetNetworkRouteArrayOutput values.
+// You can construct a concrete instance of `GetNetworkRouteArrayInput` via:
 //
-//          GerNetworkRouteArray{ GerNetworkRouteArgs{...} }
-type GerNetworkRouteArrayInput interface {
+//          GetNetworkRouteArray{ GetNetworkRouteArgs{...} }
+type GetNetworkRouteArrayInput interface {
 	pulumi.Input
 
-	ToGerNetworkRouteArrayOutput() GerNetworkRouteArrayOutput
-	ToGerNetworkRouteArrayOutputWithContext(context.Context) GerNetworkRouteArrayOutput
+	ToGetNetworkRouteArrayOutput() GetNetworkRouteArrayOutput
+	ToGetNetworkRouteArrayOutputWithContext(context.Context) GetNetworkRouteArrayOutput
 }
 
-type GerNetworkRouteArray []GerNetworkRouteInput
+type GetNetworkRouteArray []GetNetworkRouteInput
 
-func (GerNetworkRouteArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GerNetworkRoute)(nil)).Elem()
+func (GetNetworkRouteArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkRoute)(nil)).Elem()
 }
 
-func (i GerNetworkRouteArray) ToGerNetworkRouteArrayOutput() GerNetworkRouteArrayOutput {
-	return i.ToGerNetworkRouteArrayOutputWithContext(context.Background())
+func (i GetNetworkRouteArray) ToGetNetworkRouteArrayOutput() GetNetworkRouteArrayOutput {
+	return i.ToGetNetworkRouteArrayOutputWithContext(context.Background())
 }
 
-func (i GerNetworkRouteArray) ToGerNetworkRouteArrayOutputWithContext(ctx context.Context) GerNetworkRouteArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GerNetworkRouteArrayOutput)
+func (i GetNetworkRouteArray) ToGetNetworkRouteArrayOutputWithContext(ctx context.Context) GetNetworkRouteArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkRouteArrayOutput)
 }
 
-type GerNetworkRouteOutput struct{ *pulumi.OutputState }
+type GetNetworkRouteOutput struct{ *pulumi.OutputState }
 
-func (GerNetworkRouteOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GerNetworkRoute)(nil)).Elem()
+func (GetNetworkRouteOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkRoute)(nil)).Elem()
 }
 
-func (o GerNetworkRouteOutput) ToGerNetworkRouteOutput() GerNetworkRouteOutput {
+func (o GetNetworkRouteOutput) ToGetNetworkRouteOutput() GetNetworkRouteOutput {
 	return o
 }
 
-func (o GerNetworkRouteOutput) ToGerNetworkRouteOutputWithContext(ctx context.Context) GerNetworkRouteOutput {
+func (o GetNetworkRouteOutput) ToGetNetworkRouteOutputWithContext(ctx context.Context) GetNetworkRouteOutput {
 	return o
 }
 
-func (o GerNetworkRouteOutput) Target() pulumi.StringOutput {
-	return o.ApplyT(func(v GerNetworkRoute) string { return v.Target }).(pulumi.StringOutput)
+func (o GetNetworkRouteOutput) Target() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkRoute) string { return v.Target }).(pulumi.StringOutput)
 }
 
-func (o GerNetworkRouteOutput) Via() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GerNetworkRoute) *string { return v.Via }).(pulumi.StringPtrOutput)
+func (o GetNetworkRouteOutput) Via() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNetworkRoute) *string { return v.Via }).(pulumi.StringPtrOutput)
 }
 
-type GerNetworkRouteArrayOutput struct{ *pulumi.OutputState }
+type GetNetworkRouteArrayOutput struct{ *pulumi.OutputState }
 
-func (GerNetworkRouteArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GerNetworkRoute)(nil)).Elem()
+func (GetNetworkRouteArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkRoute)(nil)).Elem()
 }
 
-func (o GerNetworkRouteArrayOutput) ToGerNetworkRouteArrayOutput() GerNetworkRouteArrayOutput {
+func (o GetNetworkRouteArrayOutput) ToGetNetworkRouteArrayOutput() GetNetworkRouteArrayOutput {
 	return o
 }
 
-func (o GerNetworkRouteArrayOutput) ToGerNetworkRouteArrayOutputWithContext(ctx context.Context) GerNetworkRouteArrayOutput {
+func (o GetNetworkRouteArrayOutput) ToGetNetworkRouteArrayOutputWithContext(ctx context.Context) GetNetworkRouteArrayOutput {
 	return o
 }
 
-func (o GerNetworkRouteArrayOutput) Index(i pulumi.IntInput) GerNetworkRouteOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GerNetworkRoute {
-		return vs[0].([]GerNetworkRoute)[vs[1].(int)]
-	}).(GerNetworkRouteOutput)
+func (o GetNetworkRouteArrayOutput) Index(i pulumi.IntInput) GetNetworkRouteOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkRoute {
+		return vs[0].([]GetNetworkRoute)[vs[1].(int)]
+	}).(GetNetworkRouteOutput)
 }
 
 func init() {
@@ -831,14 +831,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkAssignmentPoolArrayInput)(nil)).Elem(), NetworkAssignmentPoolArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkRouteInput)(nil)).Elem(), NetworkRouteArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkRouteArrayInput)(nil)).Elem(), NetworkRouteArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GerNetworkAssignIpv4Input)(nil)).Elem(), GerNetworkAssignIpv4Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GerNetworkAssignIpv4ArrayInput)(nil)).Elem(), GerNetworkAssignIpv4Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GerNetworkAssignIpv6Input)(nil)).Elem(), GerNetworkAssignIpv6Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GerNetworkAssignIpv6ArrayInput)(nil)).Elem(), GerNetworkAssignIpv6Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GerNetworkAssignmentPoolInput)(nil)).Elem(), GerNetworkAssignmentPoolArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GerNetworkAssignmentPoolArrayInput)(nil)).Elem(), GerNetworkAssignmentPoolArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GerNetworkRouteInput)(nil)).Elem(), GerNetworkRouteArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GerNetworkRouteArrayInput)(nil)).Elem(), GerNetworkRouteArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkAssignIpv4Input)(nil)).Elem(), GetNetworkAssignIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkAssignIpv4ArrayInput)(nil)).Elem(), GetNetworkAssignIpv4Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkAssignIpv6Input)(nil)).Elem(), GetNetworkAssignIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkAssignIpv6ArrayInput)(nil)).Elem(), GetNetworkAssignIpv6Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkAssignmentPoolInput)(nil)).Elem(), GetNetworkAssignmentPoolArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkAssignmentPoolArrayInput)(nil)).Elem(), GetNetworkAssignmentPoolArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkRouteInput)(nil)).Elem(), GetNetworkRouteArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkRouteArrayInput)(nil)).Elem(), GetNetworkRouteArray{})
 	pulumi.RegisterOutputType(NetworkAssignIpv4Output{})
 	pulumi.RegisterOutputType(NetworkAssignIpv4ArrayOutput{})
 	pulumi.RegisterOutputType(NetworkAssignIpv6Output{})
@@ -847,12 +847,12 @@ func init() {
 	pulumi.RegisterOutputType(NetworkAssignmentPoolArrayOutput{})
 	pulumi.RegisterOutputType(NetworkRouteOutput{})
 	pulumi.RegisterOutputType(NetworkRouteArrayOutput{})
-	pulumi.RegisterOutputType(GerNetworkAssignIpv4Output{})
-	pulumi.RegisterOutputType(GerNetworkAssignIpv4ArrayOutput{})
-	pulumi.RegisterOutputType(GerNetworkAssignIpv6Output{})
-	pulumi.RegisterOutputType(GerNetworkAssignIpv6ArrayOutput{})
-	pulumi.RegisterOutputType(GerNetworkAssignmentPoolOutput{})
-	pulumi.RegisterOutputType(GerNetworkAssignmentPoolArrayOutput{})
-	pulumi.RegisterOutputType(GerNetworkRouteOutput{})
-	pulumi.RegisterOutputType(GerNetworkRouteArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkAssignIpv4Output{})
+	pulumi.RegisterOutputType(GetNetworkAssignIpv4ArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkAssignIpv6Output{})
+	pulumi.RegisterOutputType(GetNetworkAssignIpv6ArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkAssignmentPoolOutput{})
+	pulumi.RegisterOutputType(GetNetworkAssignmentPoolArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkRouteOutput{})
+	pulumi.RegisterOutputType(GetNetworkRouteArrayOutput{})
 }

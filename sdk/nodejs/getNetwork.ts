@@ -14,19 +14,19 @@ import * as utilities from "./utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as zerotier from "@pulumi/zerotier";
  *
- * const bob = zerotier.gerNetwork({
+ * const bob = zerotier.getNetwork({
  *     id: zerotier_network.bobs_garage.id,
  * });
  * ```
  */
-export function gerNetwork(args?: GerNetworkArgs, opts?: pulumi.InvokeOptions): Promise<GerNetworkResult> {
+export function getNetwork(args?: GetNetworkArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkResult> {
     args = args || {};
     if (!opts) {
         opts = {}
     }
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
-    return pulumi.runtime.invoke("zerotier:index/gerNetwork:gerNetwork", {
+    return pulumi.runtime.invoke("zerotier:index/getNetwork:getNetwork", {
         "assignIpv4s": args.assignIpv4s,
         "assignIpv6s": args.assignIpv6s,
         "assignmentPools": args.assignmentPools,
@@ -42,21 +42,21 @@ export function gerNetwork(args?: GerNetworkArgs, opts?: pulumi.InvokeOptions): 
 }
 
 /**
- * A collection of arguments for invoking gerNetwork.
+ * A collection of arguments for invoking getNetwork.
  */
-export interface GerNetworkArgs {
+export interface GetNetworkArgs {
     /**
      * IPv4 Assignment RuleSets
      */
-    assignIpv4s?: inputs.GerNetworkAssignIpv4[];
+    assignIpv4s?: inputs.GetNetworkAssignIpv4[];
     /**
      * IPv6 Assignment RuleSets
      */
-    assignIpv6s?: inputs.GerNetworkAssignIpv6[];
+    assignIpv6s?: inputs.GetNetworkAssignIpv6[];
     /**
      * Rules regarding IPv4 and IPv6 assignments
      */
-    assignmentPools?: inputs.GerNetworkAssignmentPool[];
+    assignmentPools?: inputs.GetNetworkAssignmentPool[];
     /**
      * The description of the network
      */
@@ -88,25 +88,25 @@ export interface GerNetworkArgs {
     /**
      * A ipv4 or ipv6 network route
      */
-    routes?: inputs.GerNetworkRoute[];
+    routes?: inputs.GetNetworkRoute[];
 }
 
 /**
- * A collection of values returned by gerNetwork.
+ * A collection of values returned by getNetwork.
  */
-export interface GerNetworkResult {
+export interface GetNetworkResult {
     /**
      * IPv4 Assignment RuleSets
      */
-    readonly assignIpv4s: outputs.GerNetworkAssignIpv4[];
+    readonly assignIpv4s: outputs.GetNetworkAssignIpv4[];
     /**
      * IPv6 Assignment RuleSets
      */
-    readonly assignIpv6s: outputs.GerNetworkAssignIpv6[];
+    readonly assignIpv6s: outputs.GetNetworkAssignIpv6[];
     /**
      * Rules regarding IPv4 and IPv6 assignments
      */
-    readonly assignmentPools: outputs.GerNetworkAssignmentPool[];
+    readonly assignmentPools: outputs.GetNetworkAssignmentPool[];
     /**
      * The time at which this network was created, in epoch seconds
      */
@@ -142,29 +142,29 @@ export interface GerNetworkResult {
     /**
      * A ipv4 or ipv6 network route
      */
-    readonly routes: outputs.GerNetworkRoute[];
+    readonly routes: outputs.GetNetworkRoute[];
 }
 
-export function gerNetworkOutput(args?: GerNetworkOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GerNetworkResult> {
-    return pulumi.output(args).apply(a => gerNetwork(a, opts))
+export function getNetworkOutput(args?: GetNetworkOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkResult> {
+    return pulumi.output(args).apply(a => getNetwork(a, opts))
 }
 
 /**
- * A collection of arguments for invoking gerNetwork.
+ * A collection of arguments for invoking getNetwork.
  */
-export interface GerNetworkOutputArgs {
+export interface GetNetworkOutputArgs {
     /**
      * IPv4 Assignment RuleSets
      */
-    assignIpv4s?: pulumi.Input<pulumi.Input<inputs.GerNetworkAssignIpv4Args>[]>;
+    assignIpv4s?: pulumi.Input<pulumi.Input<inputs.GetNetworkAssignIpv4Args>[]>;
     /**
      * IPv6 Assignment RuleSets
      */
-    assignIpv6s?: pulumi.Input<pulumi.Input<inputs.GerNetworkAssignIpv6Args>[]>;
+    assignIpv6s?: pulumi.Input<pulumi.Input<inputs.GetNetworkAssignIpv6Args>[]>;
     /**
      * Rules regarding IPv4 and IPv6 assignments
      */
-    assignmentPools?: pulumi.Input<pulumi.Input<inputs.GerNetworkAssignmentPoolArgs>[]>;
+    assignmentPools?: pulumi.Input<pulumi.Input<inputs.GetNetworkAssignmentPoolArgs>[]>;
     /**
      * The description of the network
      */
@@ -196,5 +196,5 @@ export interface GerNetworkOutputArgs {
     /**
      * A ipv4 or ipv6 network route
      */
-    routes?: pulumi.Input<pulumi.Input<inputs.GerNetworkRouteArgs>[]>;
+    routes?: pulumi.Input<pulumi.Input<inputs.GetNetworkRouteArgs>[]>;
 }

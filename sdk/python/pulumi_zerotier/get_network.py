@@ -11,16 +11,16 @@ from . import outputs
 from ._inputs import *
 
 __all__ = [
-    'GerNetworkResult',
-    'AwaitableGerNetworkResult',
-    'ger_network',
-    'ger_network_output',
+    'GetNetworkResult',
+    'AwaitableGetNetworkResult',
+    'get_network',
+    'get_network_output',
 ]
 
 @pulumi.output_type
-class GerNetworkResult:
+class GetNetworkResult:
     """
-    A collection of values returned by gerNetwork.
+    A collection of values returned by getNetwork.
     """
     def __init__(__self__, assign_ipv4s=None, assign_ipv6s=None, assignment_pools=None, creation_time=None, description=None, enable_broadcast=None, flow_rules=None, id=None, multicast_limit=None, name=None, private=None, routes=None):
         if assign_ipv4s and not isinstance(assign_ipv4s, list):
@@ -62,7 +62,7 @@ class GerNetworkResult:
 
     @property
     @pulumi.getter(name="assignIpv4s")
-    def assign_ipv4s(self) -> Sequence['outputs.GerNetworkAssignIpv4Result']:
+    def assign_ipv4s(self) -> Sequence['outputs.GetNetworkAssignIpv4Result']:
         """
         IPv4 Assignment RuleSets
         """
@@ -70,7 +70,7 @@ class GerNetworkResult:
 
     @property
     @pulumi.getter(name="assignIpv6s")
-    def assign_ipv6s(self) -> Sequence['outputs.GerNetworkAssignIpv6Result']:
+    def assign_ipv6s(self) -> Sequence['outputs.GetNetworkAssignIpv6Result']:
         """
         IPv6 Assignment RuleSets
         """
@@ -78,7 +78,7 @@ class GerNetworkResult:
 
     @property
     @pulumi.getter(name="assignmentPools")
-    def assignment_pools(self) -> Sequence['outputs.GerNetworkAssignmentPoolResult']:
+    def assignment_pools(self) -> Sequence['outputs.GetNetworkAssignmentPoolResult']:
         """
         Rules regarding IPv4 and IPv6 assignments
         """
@@ -150,19 +150,19 @@ class GerNetworkResult:
 
     @property
     @pulumi.getter
-    def routes(self) -> Sequence['outputs.GerNetworkRouteResult']:
+    def routes(self) -> Sequence['outputs.GetNetworkRouteResult']:
         """
         A ipv4 or ipv6 network route
         """
         return pulumi.get(self, "routes")
 
 
-class AwaitableGerNetworkResult(GerNetworkResult):
+class AwaitableGetNetworkResult(GetNetworkResult):
     # pylint: disable=using-constant-test
     def __await__(self):
         if False:
             yield self
-        return GerNetworkResult(
+        return GetNetworkResult(
             assign_ipv4s=self.assign_ipv4s,
             assign_ipv6s=self.assign_ipv6s,
             assignment_pools=self.assignment_pools,
@@ -177,9 +177,9 @@ class AwaitableGerNetworkResult(GerNetworkResult):
             routes=self.routes)
 
 
-def ger_network(assign_ipv4s: Optional[Sequence[pulumi.InputType['GerNetworkAssignIpv4Args']]] = None,
-                assign_ipv6s: Optional[Sequence[pulumi.InputType['GerNetworkAssignIpv6Args']]] = None,
-                assignment_pools: Optional[Sequence[pulumi.InputType['GerNetworkAssignmentPoolArgs']]] = None,
+def get_network(assign_ipv4s: Optional[Sequence[pulumi.InputType['GetNetworkAssignIpv4Args']]] = None,
+                assign_ipv6s: Optional[Sequence[pulumi.InputType['GetNetworkAssignIpv6Args']]] = None,
+                assignment_pools: Optional[Sequence[pulumi.InputType['GetNetworkAssignmentPoolArgs']]] = None,
                 description: Optional[str] = None,
                 enable_broadcast: Optional[bool] = None,
                 flow_rules: Optional[str] = None,
@@ -187,8 +187,8 @@ def ger_network(assign_ipv4s: Optional[Sequence[pulumi.InputType['GerNetworkAssi
                 multicast_limit: Optional[int] = None,
                 name: Optional[str] = None,
                 private: Optional[bool] = None,
-                routes: Optional[Sequence[pulumi.InputType['GerNetworkRouteArgs']]] = None,
-                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGerNetworkResult:
+                routes: Optional[Sequence[pulumi.InputType['GetNetworkRouteArgs']]] = None,
+                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetNetworkResult:
     """
     Data source for ZeroTier networks, allowing you to find a network by ID
 
@@ -198,13 +198,13 @@ def ger_network(assign_ipv4s: Optional[Sequence[pulumi.InputType['GerNetworkAssi
     import pulumi
     import pulumi_zerotier as zerotier
 
-    bob = zerotier.ger_network(id=zerotier_network["bobs_garage"]["id"])
+    bob = zerotier.get_network(id=zerotier_network["bobs_garage"]["id"])
     ```
 
 
-    :param Sequence[pulumi.InputType['GerNetworkAssignIpv4Args']] assign_ipv4s: IPv4 Assignment RuleSets
-    :param Sequence[pulumi.InputType['GerNetworkAssignIpv6Args']] assign_ipv6s: IPv6 Assignment RuleSets
-    :param Sequence[pulumi.InputType['GerNetworkAssignmentPoolArgs']] assignment_pools: Rules regarding IPv4 and IPv6 assignments
+    :param Sequence[pulumi.InputType['GetNetworkAssignIpv4Args']] assign_ipv4s: IPv4 Assignment RuleSets
+    :param Sequence[pulumi.InputType['GetNetworkAssignIpv6Args']] assign_ipv6s: IPv6 Assignment RuleSets
+    :param Sequence[pulumi.InputType['GetNetworkAssignmentPoolArgs']] assignment_pools: Rules regarding IPv4 and IPv6 assignments
     :param str description: The description of the network
     :param bool enable_broadcast: Enable broadcast packets on the network
     :param str flow_rules: The layer 2 flow rules to apply to packets traveling across this network. Please see https://www.zerotier.com/manual/#3*4*1 for more information.
@@ -212,7 +212,7 @@ def ger_network(assign_ipv4s: Optional[Sequence[pulumi.InputType['GerNetworkAssi
     :param int multicast_limit: Maximum number of recipients per multicast or broadcast. Warning - Setting this to 0 will disable IPv4 communication on your network!
     :param str name: The name of the network
     :param bool private: Whether or not the network is private.  If false, members will *NOT* need to be authorized to join.
-    :param Sequence[pulumi.InputType['GerNetworkRouteArgs']] routes: A ipv4 or ipv6 network route
+    :param Sequence[pulumi.InputType['GetNetworkRouteArgs']] routes: A ipv4 or ipv6 network route
     """
     __args__ = dict()
     __args__['assignIpv4s'] = assign_ipv4s
@@ -230,9 +230,9 @@ def ger_network(assign_ipv4s: Optional[Sequence[pulumi.InputType['GerNetworkAssi
         opts = pulumi.InvokeOptions()
     if opts.version is None:
         opts.version = _utilities.get_version()
-    __ret__ = pulumi.runtime.invoke('zerotier:index/gerNetwork:gerNetwork', __args__, opts=opts, typ=GerNetworkResult).value
+    __ret__ = pulumi.runtime.invoke('zerotier:index/getNetwork:getNetwork', __args__, opts=opts, typ=GetNetworkResult).value
 
-    return AwaitableGerNetworkResult(
+    return AwaitableGetNetworkResult(
         assign_ipv4s=__ret__.assign_ipv4s,
         assign_ipv6s=__ret__.assign_ipv6s,
         assignment_pools=__ret__.assignment_pools,
@@ -247,10 +247,10 @@ def ger_network(assign_ipv4s: Optional[Sequence[pulumi.InputType['GerNetworkAssi
         routes=__ret__.routes)
 
 
-@_utilities.lift_output_func(ger_network)
-def ger_network_output(assign_ipv4s: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GerNetworkAssignIpv4Args']]]]] = None,
-                       assign_ipv6s: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GerNetworkAssignIpv6Args']]]]] = None,
-                       assignment_pools: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GerNetworkAssignmentPoolArgs']]]]] = None,
+@_utilities.lift_output_func(get_network)
+def get_network_output(assign_ipv4s: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNetworkAssignIpv4Args']]]]] = None,
+                       assign_ipv6s: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNetworkAssignIpv6Args']]]]] = None,
+                       assignment_pools: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNetworkAssignmentPoolArgs']]]]] = None,
                        description: Optional[pulumi.Input[Optional[str]]] = None,
                        enable_broadcast: Optional[pulumi.Input[Optional[bool]]] = None,
                        flow_rules: Optional[pulumi.Input[Optional[str]]] = None,
@@ -258,8 +258,8 @@ def ger_network_output(assign_ipv4s: Optional[pulumi.Input[Optional[Sequence[pul
                        multicast_limit: Optional[pulumi.Input[Optional[int]]] = None,
                        name: Optional[pulumi.Input[Optional[str]]] = None,
                        private: Optional[pulumi.Input[Optional[bool]]] = None,
-                       routes: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GerNetworkRouteArgs']]]]] = None,
-                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GerNetworkResult]:
+                       routes: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetNetworkRouteArgs']]]]] = None,
+                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetNetworkResult]:
     """
     Data source for ZeroTier networks, allowing you to find a network by ID
 
@@ -269,13 +269,13 @@ def ger_network_output(assign_ipv4s: Optional[pulumi.Input[Optional[Sequence[pul
     import pulumi
     import pulumi_zerotier as zerotier
 
-    bob = zerotier.ger_network(id=zerotier_network["bobs_garage"]["id"])
+    bob = zerotier.get_network(id=zerotier_network["bobs_garage"]["id"])
     ```
 
 
-    :param Sequence[pulumi.InputType['GerNetworkAssignIpv4Args']] assign_ipv4s: IPv4 Assignment RuleSets
-    :param Sequence[pulumi.InputType['GerNetworkAssignIpv6Args']] assign_ipv6s: IPv6 Assignment RuleSets
-    :param Sequence[pulumi.InputType['GerNetworkAssignmentPoolArgs']] assignment_pools: Rules regarding IPv4 and IPv6 assignments
+    :param Sequence[pulumi.InputType['GetNetworkAssignIpv4Args']] assign_ipv4s: IPv4 Assignment RuleSets
+    :param Sequence[pulumi.InputType['GetNetworkAssignIpv6Args']] assign_ipv6s: IPv6 Assignment RuleSets
+    :param Sequence[pulumi.InputType['GetNetworkAssignmentPoolArgs']] assignment_pools: Rules regarding IPv4 and IPv6 assignments
     :param str description: The description of the network
     :param bool enable_broadcast: Enable broadcast packets on the network
     :param str flow_rules: The layer 2 flow rules to apply to packets traveling across this network. Please see https://www.zerotier.com/manual/#3*4*1 for more information.
@@ -283,6 +283,6 @@ def ger_network_output(assign_ipv4s: Optional[pulumi.Input[Optional[Sequence[pul
     :param int multicast_limit: Maximum number of recipients per multicast or broadcast. Warning - Setting this to 0 will disable IPv4 communication on your network!
     :param str name: The name of the network
     :param bool private: Whether or not the network is private.  If false, members will *NOT* need to be authorized to join.
-    :param Sequence[pulumi.InputType['GerNetworkRouteArgs']] routes: A ipv4 or ipv6 network route
+    :param Sequence[pulumi.InputType['GetNetworkRouteArgs']] routes: A ipv4 or ipv6 network route
     """
     ...

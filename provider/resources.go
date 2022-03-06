@@ -99,7 +99,7 @@ func Provider() tfbridge.ProviderInfo {
 			},
 		},
 		DataSources: map[string]*tfbridge.DataSourceInfo{
-			"zerotier_network": {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "gerNetwork")},
+			"zerotier_network": {Tok: tfbridge.MakeDataSource(mainPkg, mainMod, "getNetwork")},
 		},
 		JavaScript: &tfbridge.JavaScriptInfo{
 			// List any npm dependencies and their versions

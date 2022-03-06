@@ -10,15 +10,15 @@ using Pulumi.Serialization;
 namespace Pulumi.Zerotier.Inputs
 {
 
-    public sealed class GerNetworkAssignmentPoolInputArgs : Pulumi.ResourceArgs
+    public sealed class GetNetworkRouteArgs : Pulumi.InvokeArgs
     {
-        [Input("end")]
-        public Input<string>? End { get; set; }
+        [Input("target", required: true)]
+        public string Target { get; set; } = null!;
 
-        [Input("start")]
-        public Input<string>? Start { get; set; }
+        [Input("via")]
+        public string? Via { get; set; }
 
-        public GerNetworkAssignmentPoolInputArgs()
+        public GetNetworkRouteArgs()
         {
         }
     }

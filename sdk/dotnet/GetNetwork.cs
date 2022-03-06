@@ -9,7 +9,7 @@ using Pulumi.Serialization;
 
 namespace Pulumi.Zerotier
 {
-    public static class GerNetwork
+    public static class GetNetwork
     {
         /// <summary>
         /// Data source for ZeroTier networks, allowing you to find a network by ID
@@ -26,7 +26,7 @@ namespace Pulumi.Zerotier
         /// {
         ///     public MyStack()
         ///     {
-        ///         var bob = Output.Create(Zerotier.GerNetwork.InvokeAsync(new Zerotier.GerNetworkArgs
+        ///         var bob = Output.Create(Zerotier.GetNetwork.InvokeAsync(new Zerotier.GetNetworkArgs
         ///         {
         ///             Id = zerotier_network.Bobs_garage.Id,
         ///         }));
@@ -37,8 +37,8 @@ namespace Pulumi.Zerotier
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
-        public static Task<GerNetworkResult> InvokeAsync(GerNetworkArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GerNetworkResult>("zerotier:index/gerNetwork:gerNetwork", args ?? new GerNetworkArgs(), options.WithDefaults());
+        public static Task<GetNetworkResult> InvokeAsync(GetNetworkArgs? args = null, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.InvokeAsync<GetNetworkResult>("zerotier:index/getNetwork:getNetwork", args ?? new GetNetworkArgs(), options.WithDefaults());
 
         /// <summary>
         /// Data source for ZeroTier networks, allowing you to find a network by ID
@@ -55,7 +55,7 @@ namespace Pulumi.Zerotier
         /// {
         ///     public MyStack()
         ///     {
-        ///         var bob = Output.Create(Zerotier.GerNetwork.InvokeAsync(new Zerotier.GerNetworkArgs
+        ///         var bob = Output.Create(Zerotier.GetNetwork.InvokeAsync(new Zerotier.GetNetworkArgs
         ///         {
         ///             Id = zerotier_network.Bobs_garage.Id,
         ///         }));
@@ -66,46 +66,46 @@ namespace Pulumi.Zerotier
         /// {{% /example %}}
         /// {{% /examples %}}
         /// </summary>
-        public static Output<GerNetworkResult> Invoke(GerNetworkInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GerNetworkResult>("zerotier:index/gerNetwork:gerNetwork", args ?? new GerNetworkInvokeArgs(), options.WithDefaults());
+        public static Output<GetNetworkResult> Invoke(GetNetworkInvokeArgs? args = null, InvokeOptions? options = null)
+            => Pulumi.Deployment.Instance.Invoke<GetNetworkResult>("zerotier:index/getNetwork:getNetwork", args ?? new GetNetworkInvokeArgs(), options.WithDefaults());
     }
 
 
-    public sealed class GerNetworkArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkArgs : Pulumi.InvokeArgs
     {
         [Input("assignIpv4s")]
-        private List<Inputs.GerNetworkAssignIpv4Args>? _assignIpv4s;
+        private List<Inputs.GetNetworkAssignIpv4Args>? _assignIpv4s;
 
         /// <summary>
         /// IPv4 Assignment RuleSets
         /// </summary>
-        public List<Inputs.GerNetworkAssignIpv4Args> AssignIpv4s
+        public List<Inputs.GetNetworkAssignIpv4Args> AssignIpv4s
         {
-            get => _assignIpv4s ?? (_assignIpv4s = new List<Inputs.GerNetworkAssignIpv4Args>());
+            get => _assignIpv4s ?? (_assignIpv4s = new List<Inputs.GetNetworkAssignIpv4Args>());
             set => _assignIpv4s = value;
         }
 
         [Input("assignIpv6s")]
-        private List<Inputs.GerNetworkAssignIpv6Args>? _assignIpv6s;
+        private List<Inputs.GetNetworkAssignIpv6Args>? _assignIpv6s;
 
         /// <summary>
         /// IPv6 Assignment RuleSets
         /// </summary>
-        public List<Inputs.GerNetworkAssignIpv6Args> AssignIpv6s
+        public List<Inputs.GetNetworkAssignIpv6Args> AssignIpv6s
         {
-            get => _assignIpv6s ?? (_assignIpv6s = new List<Inputs.GerNetworkAssignIpv6Args>());
+            get => _assignIpv6s ?? (_assignIpv6s = new List<Inputs.GetNetworkAssignIpv6Args>());
             set => _assignIpv6s = value;
         }
 
         [Input("assignmentPools")]
-        private List<Inputs.GerNetworkAssignmentPoolArgs>? _assignmentPools;
+        private List<Inputs.GetNetworkAssignmentPoolArgs>? _assignmentPools;
 
         /// <summary>
         /// Rules regarding IPv4 and IPv6 assignments
         /// </summary>
-        public List<Inputs.GerNetworkAssignmentPoolArgs> AssignmentPools
+        public List<Inputs.GetNetworkAssignmentPoolArgs> AssignmentPools
         {
-            get => _assignmentPools ?? (_assignmentPools = new List<Inputs.GerNetworkAssignmentPoolArgs>());
+            get => _assignmentPools ?? (_assignmentPools = new List<Inputs.GetNetworkAssignmentPoolArgs>());
             set => _assignmentPools = value;
         }
 
@@ -152,57 +152,57 @@ namespace Pulumi.Zerotier
         public bool? Private { get; set; }
 
         [Input("routes")]
-        private List<Inputs.GerNetworkRouteArgs>? _routes;
+        private List<Inputs.GetNetworkRouteArgs>? _routes;
 
         /// <summary>
         /// A ipv4 or ipv6 network route
         /// </summary>
-        public List<Inputs.GerNetworkRouteArgs> Routes
+        public List<Inputs.GetNetworkRouteArgs> Routes
         {
-            get => _routes ?? (_routes = new List<Inputs.GerNetworkRouteArgs>());
+            get => _routes ?? (_routes = new List<Inputs.GetNetworkRouteArgs>());
             set => _routes = value;
         }
 
-        public GerNetworkArgs()
+        public GetNetworkArgs()
         {
         }
     }
 
-    public sealed class GerNetworkInvokeArgs : Pulumi.InvokeArgs
+    public sealed class GetNetworkInvokeArgs : Pulumi.InvokeArgs
     {
         [Input("assignIpv4s")]
-        private InputList<Inputs.GerNetworkAssignIpv4InputArgs>? _assignIpv4s;
+        private InputList<Inputs.GetNetworkAssignIpv4InputArgs>? _assignIpv4s;
 
         /// <summary>
         /// IPv4 Assignment RuleSets
         /// </summary>
-        public InputList<Inputs.GerNetworkAssignIpv4InputArgs> AssignIpv4s
+        public InputList<Inputs.GetNetworkAssignIpv4InputArgs> AssignIpv4s
         {
-            get => _assignIpv4s ?? (_assignIpv4s = new InputList<Inputs.GerNetworkAssignIpv4InputArgs>());
+            get => _assignIpv4s ?? (_assignIpv4s = new InputList<Inputs.GetNetworkAssignIpv4InputArgs>());
             set => _assignIpv4s = value;
         }
 
         [Input("assignIpv6s")]
-        private InputList<Inputs.GerNetworkAssignIpv6InputArgs>? _assignIpv6s;
+        private InputList<Inputs.GetNetworkAssignIpv6InputArgs>? _assignIpv6s;
 
         /// <summary>
         /// IPv6 Assignment RuleSets
         /// </summary>
-        public InputList<Inputs.GerNetworkAssignIpv6InputArgs> AssignIpv6s
+        public InputList<Inputs.GetNetworkAssignIpv6InputArgs> AssignIpv6s
         {
-            get => _assignIpv6s ?? (_assignIpv6s = new InputList<Inputs.GerNetworkAssignIpv6InputArgs>());
+            get => _assignIpv6s ?? (_assignIpv6s = new InputList<Inputs.GetNetworkAssignIpv6InputArgs>());
             set => _assignIpv6s = value;
         }
 
         [Input("assignmentPools")]
-        private InputList<Inputs.GerNetworkAssignmentPoolInputArgs>? _assignmentPools;
+        private InputList<Inputs.GetNetworkAssignmentPoolInputArgs>? _assignmentPools;
 
         /// <summary>
         /// Rules regarding IPv4 and IPv6 assignments
         /// </summary>
-        public InputList<Inputs.GerNetworkAssignmentPoolInputArgs> AssignmentPools
+        public InputList<Inputs.GetNetworkAssignmentPoolInputArgs> AssignmentPools
         {
-            get => _assignmentPools ?? (_assignmentPools = new InputList<Inputs.GerNetworkAssignmentPoolInputArgs>());
+            get => _assignmentPools ?? (_assignmentPools = new InputList<Inputs.GetNetworkAssignmentPoolInputArgs>());
             set => _assignmentPools = value;
         }
 
@@ -249,38 +249,38 @@ namespace Pulumi.Zerotier
         public Input<bool>? Private { get; set; }
 
         [Input("routes")]
-        private InputList<Inputs.GerNetworkRouteInputArgs>? _routes;
+        private InputList<Inputs.GetNetworkRouteInputArgs>? _routes;
 
         /// <summary>
         /// A ipv4 or ipv6 network route
         /// </summary>
-        public InputList<Inputs.GerNetworkRouteInputArgs> Routes
+        public InputList<Inputs.GetNetworkRouteInputArgs> Routes
         {
-            get => _routes ?? (_routes = new InputList<Inputs.GerNetworkRouteInputArgs>());
+            get => _routes ?? (_routes = new InputList<Inputs.GetNetworkRouteInputArgs>());
             set => _routes = value;
         }
 
-        public GerNetworkInvokeArgs()
+        public GetNetworkInvokeArgs()
         {
         }
     }
 
 
     [OutputType]
-    public sealed class GerNetworkResult
+    public sealed class GetNetworkResult
     {
         /// <summary>
         /// IPv4 Assignment RuleSets
         /// </summary>
-        public readonly ImmutableArray<Outputs.GerNetworkAssignIpv4Result> AssignIpv4s;
+        public readonly ImmutableArray<Outputs.GetNetworkAssignIpv4Result> AssignIpv4s;
         /// <summary>
         /// IPv6 Assignment RuleSets
         /// </summary>
-        public readonly ImmutableArray<Outputs.GerNetworkAssignIpv6Result> AssignIpv6s;
+        public readonly ImmutableArray<Outputs.GetNetworkAssignIpv6Result> AssignIpv6s;
         /// <summary>
         /// Rules regarding IPv4 and IPv6 assignments
         /// </summary>
-        public readonly ImmutableArray<Outputs.GerNetworkAssignmentPoolResult> AssignmentPools;
+        public readonly ImmutableArray<Outputs.GetNetworkAssignmentPoolResult> AssignmentPools;
         /// <summary>
         /// The time at which this network was created, in epoch seconds
         /// </summary>
@@ -316,15 +316,15 @@ namespace Pulumi.Zerotier
         /// <summary>
         /// A ipv4 or ipv6 network route
         /// </summary>
-        public readonly ImmutableArray<Outputs.GerNetworkRouteResult> Routes;
+        public readonly ImmutableArray<Outputs.GetNetworkRouteResult> Routes;
 
         [OutputConstructor]
-        private GerNetworkResult(
-            ImmutableArray<Outputs.GerNetworkAssignIpv4Result> assignIpv4s,
+        private GetNetworkResult(
+            ImmutableArray<Outputs.GetNetworkAssignIpv4Result> assignIpv4s,
 
-            ImmutableArray<Outputs.GerNetworkAssignIpv6Result> assignIpv6s,
+            ImmutableArray<Outputs.GetNetworkAssignIpv6Result> assignIpv6s,
 
-            ImmutableArray<Outputs.GerNetworkAssignmentPoolResult> assignmentPools,
+            ImmutableArray<Outputs.GetNetworkAssignmentPoolResult> assignmentPools,
 
             int creationTime,
 
@@ -342,7 +342,7 @@ namespace Pulumi.Zerotier
 
             bool? @private,
 
-            ImmutableArray<Outputs.GerNetworkRouteResult> routes)
+            ImmutableArray<Outputs.GetNetworkRouteResult> routes)
         {
             AssignIpv4s = assignIpv4s;
             AssignIpv6s = assignIpv6s;

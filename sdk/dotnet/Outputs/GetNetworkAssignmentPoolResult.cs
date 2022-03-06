@@ -11,14 +11,19 @@ namespace Pulumi.Zerotier.Outputs
 {
 
     [OutputType]
-    public sealed class GerNetworkAssignIpv4Result
+    public sealed class GetNetworkAssignmentPoolResult
     {
-        public readonly bool? Zerotier;
+        public readonly string? End;
+        public readonly string? Start;
 
         [OutputConstructor]
-        private GerNetworkAssignIpv4Result(bool? zerotier)
+        private GetNetworkAssignmentPoolResult(
+            string? end,
+
+            string? start)
         {
-            Zerotier = zerotier;
+            End = end;
+            Start = start;
         }
     }
 }

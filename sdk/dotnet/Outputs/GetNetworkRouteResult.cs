@@ -11,23 +11,19 @@ namespace Pulumi.Zerotier.Outputs
 {
 
     [OutputType]
-    public sealed class GerNetworkAssignIpv6Result
+    public sealed class GetNetworkRouteResult
     {
-        public readonly bool? Rfc4193;
-        public readonly bool? Sixplane;
-        public readonly bool? Zerotier;
+        public readonly string Target;
+        public readonly string? Via;
 
         [OutputConstructor]
-        private GerNetworkAssignIpv6Result(
-            bool? rfc4193,
+        private GetNetworkRouteResult(
+            string target,
 
-            bool? sixplane,
-
-            bool? zerotier)
+            string? via)
         {
-            Rfc4193 = rfc4193;
-            Sixplane = sixplane;
-            Zerotier = zerotier;
+            Target = target;
+            Via = via;
         }
     }
 }

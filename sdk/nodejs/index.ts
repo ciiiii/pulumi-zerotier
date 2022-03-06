@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 // Export members:
-export * from "./gerNetwork";
+export * from "./getNetwork";
 export * from "./identity";
 export * from "./member";
 export * from "./network";

@@ -4,22 +4,22 @@
 import * as pulumi from "@pulumi/pulumi";
 import { input as inputs, output as outputs } from "../types";
 
-export interface GerNetworkAssignIpv4 {
+export interface GetNetworkAssignIpv4 {
     zerotier?: boolean;
 }
 
-export interface GerNetworkAssignIpv6 {
+export interface GetNetworkAssignIpv6 {
     rfc4193?: boolean;
     sixplane?: boolean;
     zerotier?: boolean;
 }
 
-export interface GerNetworkAssignmentPool {
+export interface GetNetworkAssignmentPool {
     end?: string;
     start?: string;
 }
 
-export interface GerNetworkRoute {
+export interface GetNetworkRoute {
     target: string;
     via?: string;
 }

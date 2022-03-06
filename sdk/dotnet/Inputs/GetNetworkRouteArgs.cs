@@ -10,18 +10,15 @@ using Pulumi.Serialization;
 namespace Pulumi.Zerotier.Inputs
 {
 
-    public sealed class GerNetworkAssignIpv6Args : Pulumi.InvokeArgs
+    public sealed class GetNetworkRouteInputArgs : Pulumi.ResourceArgs
     {
-        [Input("rfc4193")]
-        public bool? Rfc4193 { get; set; }
+        [Input("target", required: true)]
+        public Input<string> Target { get; set; } = null!;
 
-        [Input("sixplane")]
-        public bool? Sixplane { get; set; }
+        [Input("via")]
+        public Input<string>? Via { get; set; }
 
-        [Input("zerotier")]
-        public bool? Zerotier { get; set; }
-
-        public GerNetworkAssignIpv6Args()
+        public GetNetworkRouteInputArgs()
         {
         }
     }
