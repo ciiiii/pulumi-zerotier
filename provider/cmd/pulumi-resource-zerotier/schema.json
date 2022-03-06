@@ -1,0 +1,100 @@
+{
+    "name": "zerotier",
+    "description": "A Pulumi package for creating and managing zerotier cloud resources.",
+    "keywords": [
+        "pulumi",
+        "zerotier",
+        "category/cloud"
+    ],
+    "homepage": "https://www.pulumi.com",
+    "license": "Apache-2.0",
+    "attribution": "This Pulumi package is based on the [`zerotier` Terraform Provider](https://github.com/terraform-providers/terraform-provider-zerotier).",
+    "repository": "https://github.com/yckao/pulumi-zerotier",
+    "publisher": "Pulumi",
+    "meta": {
+        "moduleFormat": "(.*)(?:/[^/]*)"
+    },
+    "config": {
+        "variables": {
+            "zerotierCentralToken": {
+                "type": "string",
+                "description": "ZeroTier Central API Token; you can generate a new one at https://my.zerotier.com/account.\n"
+            },
+            "zerotierCentralUrl": {
+                "type": "string",
+                "description": "ZeroTier Central API endpoint. Unlikely you'll need to alter this unless you're testing ZeroTier central itself.\n"
+            }
+        },
+        "defaults": [
+            "zerotierCentralToken",
+            "zerotierCentralUrl"
+        ]
+    },
+    "provider": {
+        "description": "The provider type for the zerotier package. By default, resources use package-wide configuration\nsettings, however an explicit `Provider` instance may be created and passed during resource\nconstruction to achieve fine-grained programmatic control over provider settings. See the\n[documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.\n",
+        "properties": {
+            "zerotierCentralToken": {
+                "type": "string",
+                "description": "ZeroTier Central API Token; you can generate a new one at https://my.zerotier.com/account.\n"
+            },
+            "zerotierCentralUrl": {
+                "type": "string",
+                "description": "ZeroTier Central API endpoint. Unlikely you'll need to alter this unless you're testing ZeroTier central itself.\n"
+            }
+        },
+        "required": [
+            "zerotierCentralToken",
+            "zerotierCentralUrl"
+        ],
+        "inputProperties": {
+            "zerotierCentralToken": {
+                "type": "string",
+                "description": "ZeroTier Central API Token; you can generate a new one at https://my.zerotier.com/account.\n"
+            },
+            "zerotierCentralUrl": {
+                "type": "string",
+                "description": "ZeroTier Central API endpoint. Unlikely you'll need to alter this unless you're testing ZeroTier central itself.\n"
+            }
+        },
+        "requiredInputs": [
+            "zerotierCentralToken",
+            "zerotierCentralUrl"
+        ]
+    },
+    "language": {
+        "csharp": {
+            "compatibility": "tfbridge20",
+            "namespaces": null,
+            "packageReferences": {
+                "Pulumi": "3.*"
+            }
+        },
+        "go": {
+            "generateExtraInputTypes": true,
+            "generateResourceContainerTypes": true,
+            "importBasePath": "github.com/pulumi/pulumi-zerotier/sdk/go/zerotier"
+        },
+        "nodejs": {
+            "compatibility": "tfbridge20",
+            "dependencies": {
+                "@pulumi/pulumi": "^3.0.0"
+            },
+            "devDependencies": {
+                "@types/mime": "^2.0.0",
+                "@types/node": "^10.0.0"
+            },
+            "disableUnionOutputTypes": true,
+            "packageDescription": "A Pulumi package for creating and managing zerotier cloud resources.",
+            "packageName": "",
+            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/terraform-providers/terraform-provider-zerotier)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi/pulumi-zerotier` repo](https://github.com/pulumi/pulumi-zerotier/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`terraform-providers/terraform-provider-zerotier` repo](https://github.com/terraform-providers/terraform-provider-zerotier/issues).",
+            "typescriptVersion": ""
+        },
+        "python": {
+            "compatibility": "tfbridge20",
+            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/terraform-providers/terraform-provider-zerotier)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi/pulumi-zerotier` repo](https://github.com/pulumi/pulumi-zerotier/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`terraform-providers/terraform-provider-zerotier` repo](https://github.com/terraform-providers/terraform-provider-zerotier/issues).",
+            "requires": {
+                "pulumi": "\u003e=3.0.0,\u003c4.0.0"
+            }
+        }
+    }
+}
