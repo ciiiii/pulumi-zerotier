@@ -8,9 +8,9 @@
     ],
     "homepage": "https://www.pulumi.com",
     "license": "Apache-2.0",
-    "attribution": "This Pulumi package is based on the [`zerotier` Terraform Provider](https://github.com/terraform-providers/terraform-provider-zerotier).",
+    "attribution": "This Pulumi package is based on the [`zerotier` Terraform Provider](https://github.com/zerotier/terraform-provider-zerotier).",
     "repository": "https://github.com/yckao/pulumi-zerotier",
-    "publisher": "Pulumi",
+    "publisher": "yckao",
     "meta": {
         "moduleFormat": "(.*)(?:/[^/]*)"
     },
@@ -29,6 +29,186 @@
             "zerotierCentralToken",
             "zerotierCentralUrl"
         ]
+    },
+    "types": {
+        "zerotier:index/NetworkAssignIpv4:NetworkAssignIpv4": {
+            "properties": {
+                "zerotier": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object"
+        },
+        "zerotier:index/NetworkAssignIpv6:NetworkAssignIpv6": {
+            "properties": {
+                "rfc4193": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "sixplane": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "zerotier": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object"
+        },
+        "zerotier:index/NetworkAssignmentPool:NetworkAssignmentPool": {
+            "properties": {
+                "end": {
+                    "type": "string",
+                    "description": "The last address in the assignment rule. This must be the highest number in the pool. end must also be accompanied by start.\n",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "start": {
+                    "type": "string",
+                    "description": "The first address in the assignment rule. This must be the lowest number in the pool. `start` must also be accompanied by `end`.\n",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object"
+        },
+        "zerotier:index/NetworkRoute:NetworkRoute": {
+            "properties": {
+                "target": {
+                    "type": "string",
+                    "description": "Network to route for\n",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "via": {
+                    "type": "string",
+                    "description": "Gateway address\n",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "target"
+            ]
+        },
+        "zerotier:index/gerNetworkAssignIpv4:gerNetworkAssignIpv4": {
+            "properties": {
+                "zerotier": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object"
+        },
+        "zerotier:index/gerNetworkAssignIpv6:gerNetworkAssignIpv6": {
+            "properties": {
+                "rfc4193": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "sixplane": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "zerotier": {
+                    "type": "boolean",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object"
+        },
+        "zerotier:index/gerNetworkAssignmentPool:gerNetworkAssignmentPool": {
+            "properties": {
+                "end": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "start": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object"
+        },
+        "zerotier:index/gerNetworkRoute:gerNetworkRoute": {
+            "properties": {
+                "target": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                },
+                "via": {
+                    "type": "string",
+                    "language": {
+                        "python": {
+                            "mapCase": false
+                        }
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "target"
+            ]
+        }
     },
     "provider": {
         "description": "The provider type for the zerotier package. By default, resources use package-wide configuration\nsettings, however an explicit `Provider` instance may be created and passed during resource\nconstruction to achieve fine-grained programmatic control over provider settings. See the\n[documentation](https://www.pulumi.com/docs/reference/programming-model/#providers) for more information.\n",
@@ -61,6 +241,633 @@
             "zerotierCentralUrl"
         ]
     },
+    "resources": {
+        "zerotier:index/identity:Identity": {
+            "description": "Identity generator for ZeroTier members. Use this provider with others to authenticate and join users to your networks.\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as zerotier from \"@pulumi/zerotier\";\n\nconst alice = new zerotier.Identity(\"alice\", {});\nconst bob = new zerotier.Identity(\"bob\", {});\n```\n```python\nimport pulumi\nimport pulumi_zerotier as zerotier\n\nalice = zerotier.Identity(\"alice\")\nbob = zerotier.Identity(\"bob\")\n```\n```csharp\nusing Pulumi;\nusing Zerotier = Pulumi.Zerotier;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var alice = new Zerotier.Identity(\"alice\", new Zerotier.IdentityArgs\n        {\n        });\n        var bob = new Zerotier.Identity(\"bob\", new Zerotier.IdentityArgs\n        {\n        });\n    }\n\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-zerotier/sdk/go/zerotier\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := zerotier.NewIdentity(ctx, \"alice\", nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\t_, err = zerotier.NewIdentity(ctx, \"bob\", nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}",
+            "properties": {
+                "privateKey": {
+                    "type": "string",
+                    "description": "The private key of the identity.\n"
+                },
+                "publicKey": {
+                    "type": "string",
+                    "description": "The public key of the identity.\n"
+                }
+            },
+            "required": [
+                "privateKey",
+                "publicKey"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Identity resources.\n",
+                "properties": {
+                    "privateKey": {
+                        "type": "string",
+                        "description": "The private key of the identity.\n"
+                    },
+                    "publicKey": {
+                        "type": "string",
+                        "description": "The public key of the identity.\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "zerotier:index/member:Member": {
+            "description": "Manage ZeroTier members and join them to networks\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as zerotier from \"@pulumi/zerotier\";\n\nconst alice = new zerotier.Member(\"alice\", {\n    memberId: zerotier_identity.alice.id,\n    networkId: zerotier_network.alicenet.id,\n    description: \"Hello, world\",\n    hidden: true,\n    allowEthernetBridging: true,\n    noAutoAssignIps: true,\n    ipAssignments: [\"10.0.0.1\"],\n});\n```\n```python\nimport pulumi\nimport pulumi_zerotier as zerotier\n\nalice = zerotier.Member(\"alice\",\n    member_id=zerotier_identity[\"alice\"][\"id\"],\n    network_id=zerotier_network[\"alicenet\"][\"id\"],\n    description=\"Hello, world\",\n    hidden=True,\n    allow_ethernet_bridging=True,\n    no_auto_assign_ips=True,\n    ip_assignments=[\"10.0.0.1\"])\n```\n```csharp\nusing Pulumi;\nusing Zerotier = Pulumi.Zerotier;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var alice = new Zerotier.Member(\"alice\", new Zerotier.MemberArgs\n        {\n            MemberId = zerotier_identity.Alice.Id,\n            NetworkId = zerotier_network.Alicenet.Id,\n            Description = \"Hello, world\",\n            Hidden = true,\n            AllowEthernetBridging = true,\n            NoAutoAssignIps = true,\n            IpAssignments = \n            {\n                \"10.0.0.1\",\n            },\n        });\n    }\n\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-zerotier/sdk/go/zerotier\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := zerotier.NewMember(ctx, \"alice\", \u0026zerotier.MemberArgs{\n\t\t\tMemberId:              pulumi.Any(zerotier_identity.Alice.Id),\n\t\t\tNetworkId:             pulumi.Any(zerotier_network.Alicenet.Id),\n\t\t\tDescription:           pulumi.String(\"Hello, world\"),\n\t\t\tHidden:                pulumi.Bool(true),\n\t\t\tAllowEthernetBridging: pulumi.Bool(true),\n\t\t\tNoAutoAssignIps:       pulumi.Bool(true),\n\t\t\tIpAssignments: pulumi.StringArray{\n\t\t\t\tpulumi.String(\"10.0.0.1\"),\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}",
+            "properties": {
+                "allowEthernetBridging": {
+                    "type": "boolean",
+                    "description": "Is this member allowed to activate ethernet bridging over the ZeroTier network?\n"
+                },
+                "authorized": {
+                    "type": "boolean",
+                    "description": "Is the member authorized on the network?\n"
+                },
+                "capabilities": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "List of network capabilities\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Text description of this member.\n"
+                },
+                "hidden": {
+                    "type": "boolean",
+                    "description": "Is this member visible?\n"
+                },
+                "ipAssignments": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of IP address assignments\n"
+                },
+                "memberId": {
+                    "type": "string",
+                    "description": "ID of this member.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Descriptive name of this member.\n"
+                },
+                "networkId": {
+                    "type": "string",
+                    "description": "ID of the network this member belongs to\n"
+                },
+                "noAutoAssignIps": {
+                    "type": "boolean",
+                    "description": "Exempt this member from the IP auto assignment pool on a Network\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        }
+                    },
+                    "description": "List of network tags\n"
+                }
+            },
+            "required": [
+                "capabilities",
+                "ipAssignments",
+                "memberId",
+                "name",
+                "networkId",
+                "tags"
+            ],
+            "inputProperties": {
+                "allowEthernetBridging": {
+                    "type": "boolean",
+                    "description": "Is this member allowed to activate ethernet bridging over the ZeroTier network?\n"
+                },
+                "authorized": {
+                    "type": "boolean",
+                    "description": "Is the member authorized on the network?\n"
+                },
+                "capabilities": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "List of network capabilities\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Text description of this member.\n"
+                },
+                "hidden": {
+                    "type": "boolean",
+                    "description": "Is this member visible?\n"
+                },
+                "ipAssignments": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of IP address assignments\n"
+                },
+                "memberId": {
+                    "type": "string",
+                    "description": "ID of this member.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Descriptive name of this member.\n"
+                },
+                "networkId": {
+                    "type": "string",
+                    "description": "ID of the network this member belongs to\n"
+                },
+                "noAutoAssignIps": {
+                    "type": "boolean",
+                    "description": "Exempt this member from the IP auto assignment pool on a Network\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        }
+                    },
+                    "description": "List of network tags\n"
+                }
+            },
+            "requiredInputs": [
+                "memberId",
+                "networkId"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Member resources.\n",
+                "properties": {
+                    "allowEthernetBridging": {
+                        "type": "boolean",
+                        "description": "Is this member allowed to activate ethernet bridging over the ZeroTier network?\n"
+                    },
+                    "authorized": {
+                        "type": "boolean",
+                        "description": "Is the member authorized on the network?\n"
+                    },
+                    "capabilities": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        },
+                        "description": "List of network capabilities\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Text description of this member.\n"
+                    },
+                    "hidden": {
+                        "type": "boolean",
+                        "description": "Is this member visible?\n"
+                    },
+                    "ipAssignments": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "List of IP address assignments\n"
+                    },
+                    "memberId": {
+                        "type": "string",
+                        "description": "ID of this member.\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Descriptive name of this member.\n"
+                    },
+                    "networkId": {
+                        "type": "string",
+                        "description": "ID of the network this member belongs to\n"
+                    },
+                    "noAutoAssignIps": {
+                        "type": "boolean",
+                        "description": "Exempt this member from the IP auto assignment pool on a Network\n"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "type": "array",
+                            "items": {
+                                "type": "integer"
+                            }
+                        },
+                        "description": "List of network tags\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "zerotier:index/network:Network": {
+            "description": "Network provider for ZeroTier, allows you to create ZeroTier networks.\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as zerotier from \"@pulumi/zerotier\";\n\nconst myNetwork = new zerotier.Network(\"my_network\", {\n    assignIpv4s: [{\n        zerotier: true,\n    }],\n    assignIpv6s: [{\n        rfc4193: false,\n        sixplane: false,\n        zerotier: true,\n    }],\n    description: \"Managed by Terraform\",\n    enableBroadcast: true,\n    flowRules: \"accept;\",\n    private: false,\n});\n```\n```python\nimport pulumi\nimport pulumi_zerotier as zerotier\n\nmy_network = zerotier.Network(\"myNetwork\",\n    assign_ipv4s=[zerotier.NetworkAssignIpv4Args(\n        zerotier=True,\n    )],\n    assign_ipv6s=[zerotier.NetworkAssignIpv6Args(\n        rfc4193=False,\n        sixplane=False,\n        zerotier=True,\n    )],\n    description=\"Managed by Terraform\",\n    enable_broadcast=True,\n    flow_rules=\"accept;\",\n    private=False)\n```\n```csharp\nusing Pulumi;\nusing Zerotier = Pulumi.Zerotier;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var myNetwork = new Zerotier.Network(\"myNetwork\", new Zerotier.NetworkArgs\n        {\n            AssignIpv4s = \n            {\n                new Zerotier.Inputs.NetworkAssignIpv4Args\n                {\n                    Zerotier = true,\n                },\n            },\n            AssignIpv6s = \n            {\n                new Zerotier.Inputs.NetworkAssignIpv6Args\n                {\n                    Rfc4193 = false,\n                    Sixplane = false,\n                    Zerotier = true,\n                },\n            },\n            Description = \"Managed by Terraform\",\n            EnableBroadcast = true,\n            FlowRules = \"accept;\",\n            Private = false,\n        });\n    }\n\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-zerotier/sdk/go/zerotier\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := zerotier.NewNetwork(ctx, \"myNetwork\", \u0026zerotier.NetworkArgs{\n\t\t\tAssignIpv4s: NetworkAssignIpv4Array{\n\t\t\t\t\u0026NetworkAssignIpv4Args{\n\t\t\t\t\tZerotier: pulumi.Bool(true),\n\t\t\t\t},\n\t\t\t},\n\t\t\tAssignIpv6s: NetworkAssignIpv6Array{\n\t\t\t\t\u0026NetworkAssignIpv6Args{\n\t\t\t\t\tRfc4193:  pulumi.Bool(false),\n\t\t\t\t\tSixplane: pulumi.Bool(false),\n\t\t\t\t\tZerotier: pulumi.Bool(true),\n\t\t\t\t},\n\t\t\t},\n\t\t\tDescription:     pulumi.String(\"Managed by Terraform\"),\n\t\t\tEnableBroadcast: pulumi.Bool(true),\n\t\t\tFlowRules:       pulumi.String(\"accept;\"),\n\t\t\tPrivate:         pulumi.Bool(false),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}\n\n## Import\n\nNetworks can be imported using their ID, e.g.\n\n```sh\n $ pulumi import zerotier:index/network:Network network 8056c2e21c1930be\n```\n\n ",
+            "properties": {
+                "assignIpv4s": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/zerotier:index/NetworkAssignIpv4:NetworkAssignIpv4"
+                    },
+                    "description": "IPv4 Assignment RuleSets\n"
+                },
+                "assignIpv6s": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/zerotier:index/NetworkAssignIpv6:NetworkAssignIpv6"
+                    },
+                    "description": "IPv6 Assignment RuleSets\n"
+                },
+                "assignmentPools": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/zerotier:index/NetworkAssignmentPool:NetworkAssignmentPool"
+                    },
+                    "description": "Rules regarding IPv4 and IPv6 assignments\n"
+                },
+                "creationTime": {
+                    "type": "integer",
+                    "description": "The time at which this network was created, in epoch seconds\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "The description of the network\n"
+                },
+                "enableBroadcast": {
+                    "type": "boolean",
+                    "description": "Enable broadcast packets on the network\n"
+                },
+                "flowRules": {
+                    "type": "string",
+                    "description": "The layer 2 flow rules to apply to packets traveling across this network. Please see https://www.zerotier.com/manual/#3*4*1 for more information.\n"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "ZeroTier's internal network identifier, aka NetworkID\n",
+                    "language": {
+                        "csharp": {
+                            "name": "NetworkId"
+                        }
+                    }
+                },
+                "multicastLimit": {
+                    "type": "integer",
+                    "description": "Maximum number of recipients per multicast or broadcast. Warning - Setting this to 0 will disable IPv4 communication on your network!\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the network\n"
+                },
+                "private": {
+                    "type": "boolean",
+                    "description": "Whether or not the network is private.  If false, members will *NOT* need to be authorized to join.\n"
+                },
+                "routes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/zerotier:index/NetworkRoute:NetworkRoute"
+                    },
+                    "description": "A ipv4 or ipv6 network route\n"
+                }
+            },
+            "required": [
+                "assignIpv4s",
+                "assignIpv6s",
+                "assignmentPools",
+                "creationTime",
+                "id",
+                "name",
+                "routes"
+            ],
+            "inputProperties": {
+                "assignIpv4s": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/zerotier:index/NetworkAssignIpv4:NetworkAssignIpv4"
+                    },
+                    "description": "IPv4 Assignment RuleSets\n"
+                },
+                "assignIpv6s": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/zerotier:index/NetworkAssignIpv6:NetworkAssignIpv6"
+                    },
+                    "description": "IPv6 Assignment RuleSets\n"
+                },
+                "assignmentPools": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/zerotier:index/NetworkAssignmentPool:NetworkAssignmentPool"
+                    },
+                    "description": "Rules regarding IPv4 and IPv6 assignments\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "The description of the network\n"
+                },
+                "enableBroadcast": {
+                    "type": "boolean",
+                    "description": "Enable broadcast packets on the network\n"
+                },
+                "flowRules": {
+                    "type": "string",
+                    "description": "The layer 2 flow rules to apply to packets traveling across this network. Please see https://www.zerotier.com/manual/#3*4*1 for more information.\n"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "ZeroTier's internal network identifier, aka NetworkID\n",
+                    "language": {
+                        "csharp": {
+                            "name": "NetworkId"
+                        }
+                    }
+                },
+                "multicastLimit": {
+                    "type": "integer",
+                    "description": "Maximum number of recipients per multicast or broadcast. Warning - Setting this to 0 will disable IPv4 communication on your network!\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the network\n"
+                },
+                "private": {
+                    "type": "boolean",
+                    "description": "Whether or not the network is private.  If false, members will *NOT* need to be authorized to join.\n"
+                },
+                "routes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/zerotier:index/NetworkRoute:NetworkRoute"
+                    },
+                    "description": "A ipv4 or ipv6 network route\n"
+                }
+            },
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Network resources.\n",
+                "properties": {
+                    "assignIpv4s": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/zerotier:index/NetworkAssignIpv4:NetworkAssignIpv4"
+                        },
+                        "description": "IPv4 Assignment RuleSets\n"
+                    },
+                    "assignIpv6s": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/zerotier:index/NetworkAssignIpv6:NetworkAssignIpv6"
+                        },
+                        "description": "IPv6 Assignment RuleSets\n"
+                    },
+                    "assignmentPools": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/zerotier:index/NetworkAssignmentPool:NetworkAssignmentPool"
+                        },
+                        "description": "Rules regarding IPv4 and IPv6 assignments\n"
+                    },
+                    "creationTime": {
+                        "type": "integer",
+                        "description": "The time at which this network was created, in epoch seconds\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "The description of the network\n"
+                    },
+                    "enableBroadcast": {
+                        "type": "boolean",
+                        "description": "Enable broadcast packets on the network\n"
+                    },
+                    "flowRules": {
+                        "type": "string",
+                        "description": "The layer 2 flow rules to apply to packets traveling across this network. Please see https://www.zerotier.com/manual/#3*4*1 for more information.\n"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "ZeroTier's internal network identifier, aka NetworkID\n",
+                        "language": {
+                            "csharp": {
+                                "name": "NetworkId"
+                            }
+                        }
+                    },
+                    "multicastLimit": {
+                        "type": "integer",
+                        "description": "Maximum number of recipients per multicast or broadcast. Warning - Setting this to 0 will disable IPv4 communication on your network!\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the network\n"
+                    },
+                    "private": {
+                        "type": "boolean",
+                        "description": "Whether or not the network is private.  If false, members will *NOT* need to be authorized to join.\n"
+                    },
+                    "routes": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/zerotier:index/NetworkRoute:NetworkRoute"
+                        },
+                        "description": "A ipv4 or ipv6 network route\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "zerotier:index/token:Token": {
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "The name of the token; if you do not supply this value, one will be generated\n"
+                },
+                "token": {
+                    "type": "string",
+                    "description": "The value of the token\n",
+                    "language": {
+                        "csharp": {
+                            "name": "ZeroTierToken"
+                        }
+                    }
+                }
+            },
+            "required": [
+                "name",
+                "token"
+            ],
+            "inputProperties": {
+                "name": {
+                    "type": "string",
+                    "description": "The name of the token; if you do not supply this value, one will be generated\n"
+                }
+            },
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Token resources.\n",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the token; if you do not supply this value, one will be generated\n"
+                    },
+                    "token": {
+                        "type": "string",
+                        "description": "The value of the token\n",
+                        "language": {
+                            "csharp": {
+                                "name": "ZeroTierToken"
+                            }
+                        }
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    "functions": {
+        "zerotier:index/gerNetwork:gerNetwork": {
+            "description": "Data source for ZeroTier networks, allowing you to find a network by ID\n\n{{% examples %}}\n## Example Usage\n{{% example %}}\n\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as zerotier from \"@pulumi/zerotier\";\n\nconst bob = zerotier.gerNetwork({\n    id: zerotier_network.bobs_garage.id,\n});\n```\n```python\nimport pulumi\nimport pulumi_zerotier as zerotier\n\nbob = zerotier.ger_network(id=zerotier_network[\"bobs_garage\"][\"id\"])\n```\n```csharp\nusing Pulumi;\nusing Zerotier = Pulumi.Zerotier;\n\nclass MyStack : Stack\n{\n    public MyStack()\n    {\n        var bob = Output.Create(Zerotier.GerNetwork.InvokeAsync(new Zerotier.GerNetworkArgs\n        {\n            Id = zerotier_network.Bobs_garage.Id,\n        }));\n    }\n\n}\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-zerotier/sdk/go/zerotier\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := zerotier.GerNetwork(ctx, \u0026GerNetworkArgs{\n\t\t\tId: pulumi.StringRef(zerotier_network.Bobs_garage.Id),\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n{{% /example %}}\n{{% /examples %}}",
+            "inputs": {
+                "description": "A collection of arguments for invoking gerNetwork.\n",
+                "properties": {
+                    "assignIpv4s": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/zerotier:index/gerNetworkAssignIpv4:gerNetworkAssignIpv4"
+                        },
+                        "description": "IPv4 Assignment RuleSets\n"
+                    },
+                    "assignIpv6s": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/zerotier:index/gerNetworkAssignIpv6:gerNetworkAssignIpv6"
+                        },
+                        "description": "IPv6 Assignment RuleSets\n"
+                    },
+                    "assignmentPools": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/zerotier:index/gerNetworkAssignmentPool:gerNetworkAssignmentPool"
+                        },
+                        "description": "Rules regarding IPv4 and IPv6 assignments\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "The description of the network\n"
+                    },
+                    "enableBroadcast": {
+                        "type": "boolean",
+                        "description": "Enable broadcast packets on the network\n"
+                    },
+                    "flowRules": {
+                        "type": "string",
+                        "description": "The layer 2 flow rules to apply to packets traveling across this network. Please see https://www.zerotier.com/manual/#3*4*1 for more information.\n"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "ZeroTier's internal network identifier, aka NetworkID\n"
+                    },
+                    "multicastLimit": {
+                        "type": "integer",
+                        "description": "Maximum number of recipients per multicast or broadcast. Warning - Setting this to 0 will disable IPv4 communication on your network!\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the network\n"
+                    },
+                    "private": {
+                        "type": "boolean",
+                        "description": "Whether or not the network is private.  If false, members will *NOT* need to be authorized to join.\n"
+                    },
+                    "routes": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/zerotier:index/gerNetworkRoute:gerNetworkRoute"
+                        },
+                        "description": "A ipv4 or ipv6 network route\n"
+                    }
+                },
+                "type": "object"
+            },
+            "outputs": {
+                "description": "A collection of values returned by gerNetwork.\n",
+                "properties": {
+                    "assignIpv4s": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/zerotier:index/gerNetworkAssignIpv4:gerNetworkAssignIpv4"
+                        },
+                        "description": "IPv4 Assignment RuleSets\n"
+                    },
+                    "assignIpv6s": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/zerotier:index/gerNetworkAssignIpv6:gerNetworkAssignIpv6"
+                        },
+                        "description": "IPv6 Assignment RuleSets\n"
+                    },
+                    "assignmentPools": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/zerotier:index/gerNetworkAssignmentPool:gerNetworkAssignmentPool"
+                        },
+                        "description": "Rules regarding IPv4 and IPv6 assignments\n"
+                    },
+                    "creationTime": {
+                        "type": "integer",
+                        "description": "The time at which this network was created, in epoch seconds\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "The description of the network\n"
+                    },
+                    "enableBroadcast": {
+                        "type": "boolean",
+                        "description": "Enable broadcast packets on the network\n"
+                    },
+                    "flowRules": {
+                        "type": "string",
+                        "description": "The layer 2 flow rules to apply to packets traveling across this network. Please see https://www.zerotier.com/manual/#3*4*1 for more information.\n"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "ZeroTier's internal network identifier, aka NetworkID\n"
+                    },
+                    "multicastLimit": {
+                        "type": "integer",
+                        "description": "Maximum number of recipients per multicast or broadcast. Warning - Setting this to 0 will disable IPv4 communication on your network!\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the network\n"
+                    },
+                    "private": {
+                        "type": "boolean",
+                        "description": "Whether or not the network is private.  If false, members will *NOT* need to be authorized to join.\n"
+                    },
+                    "routes": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/zerotier:index/gerNetworkRoute:gerNetworkRoute"
+                        },
+                        "description": "A ipv4 or ipv6 network route\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "assignIpv4s",
+                    "assignIpv6s",
+                    "assignmentPools",
+                    "creationTime",
+                    "id",
+                    "name",
+                    "routes"
+                ]
+            }
+        }
+    },
     "language": {
         "csharp": {
             "compatibility": "tfbridge20",
@@ -86,12 +893,12 @@
             "disableUnionOutputTypes": true,
             "packageDescription": "A Pulumi package for creating and managing zerotier cloud resources.",
             "packageName": "",
-            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/terraform-providers/terraform-provider-zerotier)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi/pulumi-zerotier` repo](https://github.com/pulumi/pulumi-zerotier/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`terraform-providers/terraform-provider-zerotier` repo](https://github.com/terraform-providers/terraform-provider-zerotier/issues).",
+            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/zerotier/terraform-provider-zerotier)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi/pulumi-zerotier` repo](https://github.com/pulumi/pulumi-zerotier/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`zerotier/terraform-provider-zerotier` repo](https://github.com/zerotier/terraform-provider-zerotier/issues).",
             "typescriptVersion": ""
         },
         "python": {
             "compatibility": "tfbridge20",
-            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/terraform-providers/terraform-provider-zerotier)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi/pulumi-zerotier` repo](https://github.com/pulumi/pulumi-zerotier/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`terraform-providers/terraform-provider-zerotier` repo](https://github.com/terraform-providers/terraform-provider-zerotier/issues).",
+            "readme": "\u003e This provider is a derived work of the [Terraform Provider](https://github.com/zerotier/terraform-provider-zerotier)\n\u003e distributed under [MPL 2.0](https://www.mozilla.org/en-US/MPL/2.0/). If you encounter a bug or missing feature,\n\u003e first check the [`pulumi/pulumi-zerotier` repo](https://github.com/pulumi/pulumi-zerotier/issues); however, if that doesn't turn up anything,\n\u003e please consult the source [`zerotier/terraform-provider-zerotier` repo](https://github.com/zerotier/terraform-provider-zerotier/issues).",
             "requires": {
                 "pulumi": "\u003e=3.0.0,\u003c4.0.0"
             }
