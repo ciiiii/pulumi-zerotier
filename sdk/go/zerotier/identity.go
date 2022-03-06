@@ -18,8 +18,8 @@ import (
 // package main
 //
 // import (
-// 	"github.com/pulumi/pulumi-zerotier/sdk/go/zerotier"
 // 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+// 	"github.com/yckao/pulumi-zerotier/sdk/go/zerotier"
 // )
 //
 // func main() {
