@@ -18,8 +18,8 @@ package main
 
 import (
 	"github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfbridge"
-	zerotier "github.com/pulumi/pulumi-zerotier/provider"
-	"github.com/pulumi/pulumi-zerotier/provider/pkg/version"
+	zerotier "github.com/yckao/pulumi-zerotier/provider"
+	"github.com/yckao/pulumi-zerotier/provider/pkg/version"
 )
 
 func main() {
