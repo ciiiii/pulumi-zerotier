@@ -1,6 +1,6 @@
 {
     "name": "@pulumi/zerotier",
-    "version": "0.1.0",
+    "version": "${VERSION}",
     "description": "A Pulumi package for creating and managing zerotier cloud resources.",
     "keywords": [
         "pulumi",
@@ -12,7 +12,7 @@
     "license": "Apache-2.0",
     "scripts": {
         "build": "tsc",
-        "install": "node scripts/install-pulumi-plugin.js resource zerotier 0.1.0"
+        "install": "node scripts/install-pulumi-plugin.js resource zerotier ${VERSION}"
     },
     "dependencies": {
         "@pulumi/pulumi": "^3.0.0"
